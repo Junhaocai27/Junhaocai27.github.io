@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My Homepage</title>
+    <link>https://Junhaocai27.github.io/tags/</link>
+    <description>Recent content in Tags on My Homepage</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 01 Jun 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://Junhaocai27.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alert</title>
+      <link>https://Junhaocai27.github.io/tags/alert/</link>
+      <pubDate>Sun, 01 Jun 2025 10:00:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/alert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>https://Junhaocai27.github.io/tags/markdown/</link>
+      <pubDate>Sun, 01 Jun 2025 10:00:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>https://Junhaocai27.github.io/tags/test/</link>
+      <pubDate>Sun, 01 Jun 2025 10:00:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Image</title>
+      <link>https://Junhaocai27.github.io/tags/image/</link>
+      <pubDate>Tue, 16 Jan 2024 22:30:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/image/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rendering</title>
+      <link>https://Junhaocai27.github.io/tags/rendering/</link>
+      <pubDate>Tue, 16 Jan 2024 22:30:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/rendering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Code</title>
+      <link>https://Junhaocai27.github.io/tags/code/</link>
+      <pubDate>Tue, 16 Jan 2024 10:00:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Syntax-Highlighting</title>
+      <link>https://Junhaocai27.github.io/tags/syntax-highlighting/</link>
+      <pubDate>Tue, 16 Jan 2024 10:00:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/syntax-highlighting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prose</title>
+      <link>https://Junhaocai27.github.io/tags/prose/</link>
+      <pubDate>Mon, 15 Jan 2024 10:00:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/prose/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Style</title>
+      <link>https://Junhaocai27.github.io/tags/style/</link>
+      <pubDate>Mon, 15 Jan 2024 10:00:00 +0800</pubDate>
+      <guid>https://Junhaocai27.github.io/tags/style/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
