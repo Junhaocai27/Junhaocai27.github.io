@@ -1,6 +1,6 @@
-primary_name: "Your Name"
+primary_name: "Junhao Cai"
 secondary_name: ""
-navbar_name: "Your Name"
+navbar_name: "Junhao Cai"
 
 positions:
 - logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
@@ -8,10 +8,10 @@ positions:
 - name: Position 2 without logo
 
 
-email: "your@email.com"
+email: "caijunhao27@gmail.com"
 # cv_link: link-to-your-cv-file
 gscholar: xFmQpf4AAAAJ  # This is an example, replace it with your own Google Scholar ID
-github: your_github_id
+github: Junhaocai27
 twitter: your_twitter_id  # Do not include the '@' symbol
 # wechat_qrcode: /assets/images/etc/wechat.jpg
 # wechat_prompt: >-
@@ -30,7 +30,7 @@ short_bio: >-
     as well as being common in domestic longhair and domestic shorthair cats.
   </p>
 
-portrait_url: /assets/images/photos/portrait.jpg
+portrait_url: /assets/images/photos/profile.jpg
 portrait_caption: >-
   Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
