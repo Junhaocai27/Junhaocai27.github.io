@@ -90,3 +90,26 @@ div.lazy {
     font-family: Courier, monospace;
 }
 
+/* 访客统计样式 */
+.visitor-stats {
+    padding: 15px 0;
+    border-top: 1px solid #e9ecef;
+}
+
+.visitor-stats img {
+    width: 300px;
+    height: 152px;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .visitor-stats {
+        padding: 10px 0;
+    }
+    
+    .visitor-stats img {
+        width: 250px;
+        height: 127px;
+    }
+}
+
