@@ -1,0 +1,27 @@
+<div class="col-12 col-lg-8">
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    {% if include.logo %}
+                    <img src="{{ include.logo | relative_url }}" class="inline-badge">
+                    {% endif %}
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div><strong>{{ include.name }}</strong></div>
+                            <div class="text-muted">{{ include.position }}</div>
+                            {% if include.description %}
+                            <div class="small text-muted mt-1">{{ include.description }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-auto">
+                            <span class="badge badge-secondary">{{ include.date }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

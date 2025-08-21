@@ -40,6 +40,18 @@ h1, h2, h3, h4, h5, h6,
 .text-profile-bio {
     /* font-family: "Raleway"; */
     font-weight: 400;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* 主姓名样式 */
+.primary-name {
+    font-family: "Playfair Display", "Georgia", serif !important;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .navbar {
