@@ -19,7 +19,7 @@ Fork from [here](https://github.com/luost26/academic-homepage)
 
    ```bash
    cd /root
-   boudle install
+   bundle install
    bundle exec jekyll serve
    ```
 

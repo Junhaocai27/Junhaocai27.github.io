@@ -1,20 +1,20 @@
 ---
-title:          "[Example] Your Paper Title"
-date:           2024-05-12 00:01:00 +0800
+title:          "Cross-Modal Brain Graph Transformer via Function-Structure Connectivity Network for Brain Disease Diagnosis"
+date:           2025-09-19 00:08:00 +0800
 selected:       true  # Set to true to display in Selected Publications
-pub:            "Conference/Journal Name"
-pub_date:       "2024"
+pub:            "Medical Image Computing and Computer Assisted Intervention (MICCAI)"
+pub_date:       "2025"
 abstract: >-
-  A brief abstract of your paper (1-2 sentences)
-cover:          /assets/images/covers/cover1.jpg  # Optional cover image
+  This paper proposes a cross-modal brain graph transformer (CBGT) that integrates functional and structural brain connectivity through attention-based feature fusion and cross-modal pooling, achieving superior performance in brain disease diagnosis and identifying meaningful multimodal biomarkers.
+cover:          /assets/images/covers/cover1.png  # Optional cover image
 authors:
-  - Your Name*  # * indicates co-first author
-  - Collaborator Name
-  - Other Authors
+  - Jingxi Feng  # * indicates co-first author
+  - Heming Xu
+  - Junhao Cai*, Yujie Chang, Dong Zhang, Shaoyi Du, Juan Wang
 links:
-  Paper: https://paper-link
-  Code: https://code-link  # Optional
-  Project: https://project-link  # Optional
+  Paper: https://link.springer.com/chapter/10.1007/978-3-032-05162-2_24
+  # Code: https://code-link  # Optional
+  # Project: https://project-link  # Optional
 ---
 
 <!-- ---
