@@ -134,27 +134,33 @@ img.lazy, div.lazy {
         width: 100% !important;
         max-width: 260px !important;
         height: auto !important;
+        object-fit: contain; /* 确保不拉伸 */
     }
 
-    /* 头像与封面图修复 */
-    .profile img,
-    .portrait,
-    .profile-photo,
-    .cover-image {
-        width: auto !important;
-        max-width: 90vw !important;   /* 最大占屏幕宽度 */
-        height: auto !important;
-        max-height: 60vh !important;  /* 最大占屏幕高度 */
-        object-fit: contain !important;  /* 保留比例不拉伸 */
-        display: block !important;
-        margin: 0 auto !important;
-    }
+    /* 【已修复】将头像和封面图规则分开 */
 
-    /* 如果头像应为圆形 */
+    /* 1. 头像 (Profile Pictures) */
     .profile img,
     .portrait,
     .profile-photo {
-        border-radius: 50% !important;
+        width: auto !important;
+        max-width: 90vw !important;   /* 最大宽度90% */
+        height: auto !important;
+        max-height: 60vh !important;  /* 最大高度60% */
+        object-fit: contain !important;  /* 保持比例，完整显示 (不拉伸) */
+        display: block !important;
+        margin: 0 auto !important;
+        border-radius: 50% !important; /* 强制圆形 */
+    }
+
+    /* 2. 封面图 (Cover Image) - 强制为横幅 */
+    .cover-image {
+        width: 90vw !important;         /* 宽度为屏幕的90% */
+        height: 25vh !important;        /* 高度为屏幕的25% (您可以按需修改 20vh, 30vh 等) */
+        object-fit: cover !important;   /* 【关键】用图片填满此区域，多余部分裁剪 */
+        display: block !important;
+        margin: 0 auto !important;
+        border-radius: 0.8rem !important; /* 保持PC端的圆角 */
     }
 
     /* 文本居中避免重叠 */
