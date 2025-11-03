@@ -114,14 +114,24 @@ div.lazy {
     border: none;
 }
 
+/* === 移动端修复开始 === */
 @media (max-width: 768px) {
+
+    /* 【修复 1】添加通用规则，防止任何图片溢出 */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     .visitor-stats {
         padding: 10px 0;
     }
     
+    /* 【修复 2】修改访客统计图，使其响应式且不拉伸 */
     .visitor-stats img {
-        width: 250px;
-        height: 127px;
+        width: 100%; /* 宽度占满容器 */
+        max-width: 250px; /* 但最大不超过250px */
+        height: auto; /* 高度自动，防止拉伸 */
     }
 }
-
+/* === 移动端修复结束 === */
