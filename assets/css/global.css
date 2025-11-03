@@ -69,12 +69,23 @@ h1, h2, h3, h4, h5, h6,
     white-space: nowrap;
 }
 
+/* PC 端的 cover-image 规则 */
 .cover-image {
     width: 180px;
     max-height: 120px;
-    /* 【额外优化】为PC端也添加 object-fit，防止拉伸 */
     object-fit: cover;
+    /* 【新】如果它是div，确保它居中且裁剪 */
+    margin: 0 auto;
+    overflow: hidden;
 }
+
+/* 【新】确保PC端div内的图片也能正确显示 */
+.cover-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
 
 .abstract-body {
     min-height: 100px;
@@ -114,7 +125,6 @@ div.lazy {
     width: 300px;
     height: 152px;
     border: none;
-    /* 【额外优化】防止访客图拉伸 */
     object-fit: fill; 
 }
 
@@ -127,23 +137,41 @@ div.lazy {
         height: auto;
     }
 
-    /* 【修复 2 - 关键修复】
-     * 必须为 .cover-image 添加一个*更具体*的规则
-     * 来覆盖PC端的 'width: 180px'
+    /* 【修复 2 - 关键修复】 
+     * 假设 .cover-image 是一个 div 容器 
      */
     .cover-image {
-        width: 100%; /* 宽度占满容器 */
-        max-width: 100%; /* 确保它不超过100% */
-        height: 150px; /* 【您可以调整这个】设置一个固定的横幅高度 */
-        max-height: 150px; /* 覆盖PC端的 120px */
-        object-fit: cover; /* 裁剪图片来填充，防止拉伸 */
+        /* 【您可以修改】设置您想要的固定大小 */
+        width: 250px; 
+        height: 150px;
+        
+        /* 覆盖PC端的规则 */
+        max-width: 90vw;  /* 防止在超窄屏幕溢出 */
+        max-height: none; /* 移除PC端的max-height */
+        
+        /* 居中显示 */
+        margin-left: auto;
+        margin-right: auto;
+        
+        /* 确保裁剪 */
+        overflow: hidden; 
+        border-radius: 0.8rem; /* 保持圆角 */
+    }
+
+    /* 【修复 3 - 关键修复】 
+     * 强制 .cover-image 内部的 img 填满容器并裁剪 
+     */
+    .cover-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 裁剪以填充，防止拉伸 */
     }
 
     .visitor-stats {
         padding: 10px 0;
     }
     
-    /* 【修复 3】修改访客统计图 (这个是正确的) */
+    /* 【修复 4】访客统计图 (这个是正确的) */
     .visitor-stats img {
         width: 100%; 
         max-width: 250px;
