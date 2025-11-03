@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* === 基础字体与排版 === */
+/* === 基础 === */
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -12,26 +12,21 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 700;
 }
 
-/* === 卡片与圆角统一 === */
-.card,
-.card-img-overlay,
-.rounded-xl,
-.rounded-xl-bottom,
-.rounded-xl-top {
-    border-radius: 0.8rem !important;
+.card, .card-img-overlay,
+.rounded-xl, .rounded-xl-bottom, .rounded-xl-top {
+    border-radius: 0.8rem!important;
 }
 
 .rounded-xl-bottom {
     border-bottom-right-radius: 0.8rem !important;
     border-bottom-left-radius: 0.8rem !important;
 }
-
 .rounded-xl-top {
     border-top-left-radius: 0.8rem !important;
     border-top-right-radius: 0.8rem !important;
 }
 
-/* === 文本样式 === */
+/* === 文本 === */
 .text-profile-position {
     font-weight: 400;
 }
@@ -39,51 +34,47 @@ h1, h2, h3, h4, h5, h6,
 .text-profile-bio {
     font-weight: 400;
     hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
-/* 主姓名样式 */
+/* 主姓名 */
 .primary-name {
     font-family: "Playfair Display", "Georgia", serif !important;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
-/* 导航栏透明度 */
 .navbar {
     opacity: 0.95;
 }
 
-/* inline badge */
 .inline-badge {
     height: 16px;
     vertical-align: -10%;
     margin-right: 2px;
-    line-break: unset;
 }
 
-.no-break {
-    white-space: nowrap;
-}
+.no-break { white-space: nowrap; }
 
-/* === 封面图与图片类 === */
+/* === 图片样式 === */
+
+/* PC 封面图保持原比例 */
 .cover-image {
     width: 180px;
-    max-height: 120px;
+    height: auto;
     border-radius: 0.8rem;
     object-fit: cover;
 }
 
-/* 所有图片默认响应式（不影响 PC，防止移动端溢出） */
+/* 全局防溢出 */
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
-/* 懒加载图片的背景占位 */
+/* 懒加载背景 */
 img.lazy, div.lazy {
     background-image: url('images/loading.gif');
     background-repeat: no-repeat;
@@ -92,32 +83,18 @@ img.lazy, div.lazy {
     min-height: 80px;
 }
 
-/* === 通用文本与徽章 === */
-.abstract-body {
-    min-height: 100px;
-}
-
-.badge-publication {
-    font-size: 100%;
-}
-
-.email-text {
-    font-family: Courier, monospace;
-}
-
-/* === 访客统计部分 === */
+/* === 访客统计 === */
 .visitor-stats {
     padding: 15px 0;
     border-top: 1px solid #e9ecef;
 }
-
 .visitor-stats img {
     width: 300px;
     height: 152px;
     border: none;
 }
 
-/* === 移动端优化（仅影响 ≤768px 屏幕） === */
+/* === 移动端修复 === */
 @media (max-width: 768px) {
 
     body {
@@ -127,37 +104,28 @@ img.lazy, div.lazy {
     .visitor-stats {
         padding: 10px 0;
     }
-
-    /* 防止访客统计图超出边界 */
     .visitor-stats img {
         width: 100%;
-        max-width: 250px;
+        max-width: 260px;
         height: auto;
     }
 
-    /* 响应式封面图修正 */
-    .cover-image {
-        width: 100%;
-        max-width: 150px;
-        height: auto;
-        object-fit: cover;
-        border-radius: 0.8rem;
-    }
-
-    /* 头像/个人照修复 */
+    /* 头像与封面图自适应修复 */
+    .cover-image,
     .profile img,
     .portrait,
     .profile-photo {
-        width: 100%;
-        max-width: 150px;
-        height: auto;
-        border-radius: 50%;
-        object-fit: cover;
+        width: auto;              /* 保持原始比例宽度 */
+        max-width: 90vw;          /* 占屏宽最多 90% */
+        height: auto;             /* 高度自动 */
+        max-height: 60vh;         /* 防止太高 */
+        border-radius: 50%;       /* 保留圆形头像效果 */
+        object-fit: contain;      /* 保留比例而不裁剪 */
         display: block;
         margin: 0 auto;
     }
 
-    /* 避免文本与图片重叠 */
+    /* 文本与图片分离居中 */
     .text-profile-bio {
         text-align: center;
     }
