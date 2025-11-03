@@ -72,6 +72,8 @@ h1, h2, h3, h4, h5, h6,
 .cover-image {
     width: 180px;
     max-height: 120px;
+    /* 【额外优化】为PC端也添加 object-fit，防止拉伸 */
+    object-fit: cover;
 }
 
 .abstract-body {
@@ -112,26 +114,40 @@ div.lazy {
     width: 300px;
     height: 152px;
     border: none;
+    /* 【额外优化】防止访客图拉伸 */
+    object-fit: fill; 
 }
 
 /* === 移动端修复开始 === */
 @media (max-width: 768px) {
 
-    /* 【修复 1】添加通用规则，防止任何图片溢出 */
+    /* 【修复 1】通用规则，防止其他图片溢出 */
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    /* 【修复 2 - 关键修复】
+     * 必须为 .cover-image 添加一个*更具体*的规则
+     * 来覆盖PC端的 'width: 180px'
+     */
+    .cover-image {
+        width: 100%; /* 宽度占满容器 */
+        max-width: 100%; /* 确保它不超过100% */
+        height: 150px; /* 【您可以调整这个】设置一个固定的横幅高度 */
+        max-height: 150px; /* 覆盖PC端的 120px */
+        object-fit: cover; /* 裁剪图片来填充，防止拉伸 */
     }
 
     .visitor-stats {
         padding: 10px 0;
     }
     
-    /* 【修复 2】修改访客统计图，使其响应式且不拉伸 */
+    /* 【修复 3】修改访客统计图 (这个是正确的) */
     .visitor-stats img {
-        width: 100%; /* 宽度占满容器 */
-        max-width: 250px; /* 但最大不超过250px */
-        height: auto; /* 高度自动，防止拉伸 */
+        width: 100%; 
+        max-width: 250px;
+        height: auto; /* 高度自动，保持比例 */
     }
 }
 /* === 移动端修复结束 === */
