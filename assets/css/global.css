@@ -32,13 +32,11 @@ h1, h2, h3, h4, h5, h6,
     border-top-right-radius: 0.8rem !important;
 }
 
-
 .text-profile-position {
     font-weight: 400;
 }
 
 .text-profile-bio {
-    /* font-family: "Raleway"; */
     font-weight: 400;
     hyphens: auto;
     -webkit-hyphens: auto;
@@ -69,37 +67,27 @@ h1, h2, h3, h4, h5, h6,
     white-space: nowrap;
 }
 
-/* PC 端的 cover-image 规则 */
+/* PC 端 cover-image 规则 */
 .cover-image {
     width: 180px;
     max-height: 120px;
     object-fit: cover;
-    /* 【新】如果它是div，确保它居中且裁剪 */
     margin: 0 auto;
     overflow: hidden;
 }
 
-/* 【新】确保PC端div内的图片也能正确显示 */
+/* 确保 PC 端 div 内图片正常显示 */
 .cover-image img {
    width: 100%;
    height: 100%;
    object-fit: cover;
 }
 
-
 .abstract-body {
     min-height: 100px;
 }
 
-img.lazy {
-    background-image: url('images/loading.gif');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 50px 50px;
-    min-height: 80px;
-}
-
-div.lazy {
+img.lazy, div.lazy {
     background-image: url('images/loading.gif');
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -131,51 +119,39 @@ div.lazy {
 /* === 移动端修复开始 === */
 @media (max-width: 768px) {
 
-    /* 【修复 1】通用规则，防止其他图片溢出 */
+    /* 通用防溢出 */
     img {
         max-width: 100%;
         height: auto;
     }
 
-    /* 【修复 2 - 关键修复】 
-     * 假设 .cover-image 是一个 div 容器 
-     */
+    /* ✅ 改进的移动端 cover-image */
     .cover-image {
-        /* 【您可以修改】设置您想要的固定大小 */
-        width: 250px; 
-        height: 150px;
-        
-        /* 覆盖PC端的规则 */
-        max-width: 90vw;  /* 防止在超窄屏幕溢出 */
-        max-height: none; /* 移除PC端的max-height */
-        
-        /* 居中显示 */
+        width: 90%;              /* 宽度随屏幕自适应 */
+        max-width: 300px;        /* 限制最大宽度 */
+        aspect-ratio: 3 / 2;     /* 维持合适的宽高比 */
         margin-left: auto;
         margin-right: auto;
-        
-        /* 确保裁剪 */
-        overflow: hidden; 
-        border-radius: 0.8rem; /* 保持圆角 */
+        overflow: hidden;
+        border-radius: 0.8rem;
     }
 
-    /* 【修复 3 - 关键修复】 
-     * 强制 .cover-image 内部的 img 填满容器并裁剪 
-     */
+    /* ✅ 图片自适应且保持比例，不被拉伸 */
     .cover-image img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* 裁剪以填充，防止拉伸 */
+        object-fit: cover;
+        object-position: center;
     }
 
     .visitor-stats {
         padding: 10px 0;
     }
-    
-    /* 【修复 4】访客统计图 (这个是正确的) */
+
     .visitor-stats img {
         width: 100%; 
         max-width: 250px;
-        height: auto; /* 高度自动，保持比例 */
+        height: auto;
     }
 }
 /* === 移动端修复结束 === */
