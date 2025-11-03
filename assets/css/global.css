@@ -1,4 +1,6 @@
 @charset "utf-8";
+
+/* === 基础字体与排版 === */
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -10,16 +12,13 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 700;
 }
 
-.card {
-    border-radius: 0.8rem!important;
-}
-
-.card-img-overlay {
-    border-radius: 0.8rem!important;
-}
-
-.rounded-xl {
-    border-radius: 0.8rem!important;
+/* === 卡片与圆角统一 === */
+.card,
+.card-img-overlay,
+.rounded-xl,
+.rounded-xl-bottom,
+.rounded-xl-top {
+    border-radius: 0.8rem !important;
 }
 
 .rounded-xl-bottom {
@@ -32,13 +31,12 @@ h1, h2, h3, h4, h5, h6,
     border-top-right-radius: 0.8rem !important;
 }
 
-
+/* === 文本样式 === */
 .text-profile-position {
     font-weight: 400;
 }
 
 .text-profile-bio {
-    /* font-family: "Raleway"; */
     font-weight: 400;
     hyphens: auto;
     -webkit-hyphens: auto;
@@ -54,10 +52,12 @@ h1, h2, h3, h4, h5, h6,
     letter-spacing: 1px;
 }
 
+/* 导航栏透明度 */
 .navbar {
     opacity: 0.95;
 }
 
+/* inline badge */
 .inline-badge {
     height: 16px;
     vertical-align: -10%;
@@ -69,29 +69,32 @@ h1, h2, h3, h4, h5, h6,
     white-space: nowrap;
 }
 
+/* === 封面图与图片类 === */
 .cover-image {
     width: 180px;
     max-height: 120px;
+    border-radius: 0.8rem;
+    object-fit: cover;
 }
 
+/* 所有图片默认响应式（不影响 PC，防止移动端溢出） */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 懒加载图片的背景占位 */
+img.lazy, div.lazy {
+    background-image: url('images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50px 50px;
+    min-height: 80px;
+}
+
+/* === 通用文本与徽章 === */
 .abstract-body {
     min-height: 100px;
-}
-
-img.lazy {
-    background-image: url('images/loading.gif');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 50px 50px;
-    min-height: 80px;
-}
-
-div.lazy {
-    background-image: url('images/loading.gif');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 50px 50px;
-    min-height: 80px;
 }
 
 .badge-publication {
@@ -102,7 +105,7 @@ div.lazy {
     font-family: Courier, monospace;
 }
 
-/* 访客统计样式 */
+/* === 访客统计部分 === */
 .visitor-stats {
     padding: 15px 0;
     border-top: 1px solid #e9ecef;
@@ -114,14 +117,48 @@ div.lazy {
     border: none;
 }
 
+/* === 移动端优化（仅影响 ≤768px 屏幕） === */
 @media (max-width: 768px) {
+
+    body {
+        padding-top: 4.5rem;
+    }
+
     .visitor-stats {
         padding: 10px 0;
     }
-    
+
+    /* 防止访客统计图超出边界 */
     .visitor-stats img {
-        width: 250px;
-        height: 127px;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    /* 响应式封面图修正 */
+    .cover-image {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0.8rem;
+    }
+
+    /* 头像/个人照修复 */
+    .profile img,
+    .portrait,
+    .profile-photo {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* 避免文本与图片重叠 */
+    .text-profile-bio {
+        text-align: center;
     }
 }
-
