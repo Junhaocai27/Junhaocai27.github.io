@@ -6,7 +6,7 @@ pub:            "IEEE Conference on Computer Vision and Pattern Recognition (CVP
 pub_date:       "2026"
 abstract: >-
   This paper proposes an industrial text-to-3D generation framework named ForgeDreamer that overcomes domain adaptation and geometric reasoning challenges through a multi-expert LoRA ensemble and cross-view hypergraph modeling, achieving superior semantic generalization and enhanced geometric fidelity.
-cover:          /assets/images/covers/pipeline_new.pdf  # Optional cover image
+cover:          /assets/images/covers/cvpr_pipeline.png  # Optional cover image
 authors:
   - Junhao Cai*  # * indicates co-first author
   - Deyu Zeng*
