@@ -2,10 +2,10 @@
 title:          "ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph"
 date:           2026-02-21 00:08:00 +0800
 selected:       true  # Set to true to display in Selected Publications
-pub:            "IEEE Conference on Computer Vision and Pattern Recognition (CVPR)"
+pub:            "IEEE Conference on Computer Vision and Pattern Recognition (CVPR Findings)"
 pub_date:       "2026"
 abstract: >-
-  This paper proposes an industrial text-to-3D generation framework named ForgeDreamer that overcomes domain adaptation and geometric reasoning challenges through a multi-expert LoRA ensemble and cross-view hypergraph modeling, achieving superior semantic generalization and enhanced geometric fidelity.
+  Current text-to-3D generation methods excel in natural scenes but struggle with industrial applications due to two critical limitations: domain adaptation challenges, where conventional LoRA fusion causes knowledge interference across categories, and geometric reasoning deficiencies, where pairwise consistency constraints fail to capture higher-order structural dependencies essential for precision manufacturing. We propose a novel framework named ForgeDreamer that addresses both challenges through two key innovations. First, we introduce a Multi-Expert LoRA Ensemble mechanism that consolidates multiple category-specific LoRA models into a unified representation, achieving superior cross-category generalization while eliminating knowledge interference. Second, building on enhanced semantic understanding, we develop a Cross-View Hypergraph Geometric Enhancement approach that captures structural dependencies spanning multiple viewpoints simultaneously. These components work synergistically: improved semantic understanding enables more effective geometric reasoning, while hypergraph modeling ensures manufacturing-level consistency. Extensive experiments on a custom industrial dataset demonstrate superior semantic generalization and enhanced geometric fidelity compared to state-of-the-art approaches. Our code and data are provided in the supplementary material attached in the appendix for review purposes.
 cover:          /assets/images/covers/cvpr_pipeline.png  # Optional cover image
 authors:
   - Junhao Cai*  # * indicates co-first author
@@ -13,8 +13,8 @@ authors:
   - Junhao Pang, Lini Li, Zongze Wu, Xiaopin Zhong
 links:
   Paper: http://arxiv.org/abs/2603.09266
-  # Code: https://code-link  # Optional
-  # Project: https://project-link  # Optional
+  Code: https://github.com/Junhaocai27/ForgeDreamer  # Optional
+  Project: https://forgedreamer.github.io/  # Optional
 ---
 
 <!-- ---
