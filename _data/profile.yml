@@ -68,6 +68,8 @@ service:
 #   date: Sep. 2019 - Jul. 2021
 
 awards:
+- name: 🏆 Special Grade Academic Scholarship
+  date: 2026
 - name: 🏆 Outstanding Graduate, Shenzhen University
   date: 2025
 - name: 🏆 Bachelor of Honor, School of Mechatronics and Control Engineering
