@@ -1,6 +1,6 @@
 ---
 title:          "Cross-Modal Dynamic Hypergraph Computation via Functional-Structural Brain Network for Brain Disease Diagnosis"
-date:           2026-03-23 23:01:15 +0800
+date:           2026-04-30 20:00:00 +0800
 selected:       true  # Set to true to display in Selected Publications
 pub:            "International Joint Conference on Artificial Intelligence (IJCAI)"
 pub_date:       "2026"
