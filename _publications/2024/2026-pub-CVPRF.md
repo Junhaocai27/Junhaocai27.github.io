@@ -6,9 +6,9 @@ pub:            "IEEE Conference on Computer Vision and Pattern Recognition (CVP
 pub_date:       "2026"
 abstract: >-
   Current text-to-3D generation methods excel in natural scenes but struggle with industrial applications due to two critical limitations: domain adaptation challenges, where conventional LoRA fusion causes knowledge interference across categories, and geometric reasoning deficiencies, where pairwise consistency constraints fail to capture higher-order structural dependencies essential for precision manufacturing. We propose a novel framework named ForgeDreamer that addresses both challenges through two key innovations. First, we introduce a Multi-Expert LoRA Ensemble mechanism that consolidates multiple category-specific LoRA models into a unified representation, achieving superior cross-category generalization while eliminating knowledge interference. Second, building on enhanced semantic understanding, we develop a Cross-View Hypergraph Geometric Enhancement approach that captures structural dependencies spanning multiple viewpoints simultaneously. These components work synergistically: improved semantic understanding enables more effective geometric reasoning, while hypergraph modeling ensures manufacturing-level consistency. Extensive experiments on a custom industrial dataset demonstrate superior semantic generalization and enhanced geometric fidelity compared to state-of-the-art approaches. Our code and data are provided in the supplementary material attached in the appendix for review purposes.
-cover:          /assets/images/covers/cvpr_pipeline.png  # Optional cover image
+cover:          /assets/images/covers/cover_cvprf.png  # Optional cover image
 authors:
-  - Junhao Cai*  # * indicates co-first author
+  - Junhao Cai*
   - Deyu Zeng*
   - Junhao Pang, Lini Li, Zongze Wu, Xiaopin Zhong
 links:

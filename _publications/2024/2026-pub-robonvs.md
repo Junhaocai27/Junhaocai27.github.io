@@ -6,7 +6,7 @@ pub:            "arXiv preprint"
 pub_date:       "2026"
 abstract: >-
   Does multi-view demonstration truly improve robot manipulation, or merely enhance cross-view robustness? This paper presents a systematic study quantifying the performance gains, scaling behavior, and underlying mechanisms of multi-view data for robot manipulation. Controlled experiments show that, under both fixed and randomized backgrounds, multi-view demonstrations consistently improve single-view policy success and generalization. Motivated by the importance of multi-view data and its scarcity in large-scale robotic datasets, the paper further proposes RoboNVS, a geometry-aware self-supervised framework that synthesizes novel-view videos from monocular inputs, and shows that the generated data consistently improves downstream policies in both simulation and real-world environments.
-cover:          /assets/images/covers/robonvs.png  # Optional cover image
+cover:          /assets/images/covers/cover_robonvs.png  # Optional cover image
 authors:
   - Boyang Cai
   - Qiwei Liang
