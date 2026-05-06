@@ -1,15 +1,17 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign locale = site.data.i18n[lang] %}
 <footer class="footer">
     <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
         {% include visitor_stats.html %}
         <div class="row my-3">
             <div class="col-6">
                 <div class="text-muted">
-                    <i>Last updated: {{ "now" | date: "%b %Y" }}</i>
+                    <i>{{ locale.footer_last_updated }} {% if lang == "zh" %}{{ "now" | date: "%Y年%m月" }}{% else %}{{ "now" | date: "%b %Y" }}{% endif %}</i>
                 </div>
             </div>
             <div class="col-6">
                 <div class="text-right text-muted">
-                    {{ site.data.display.footer_text }}
+                    {{ locale.footer_text | default: site.data.display.footer_text }}
                 </div>
             </div>
         </div>

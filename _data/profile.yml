@@ -25,7 +25,7 @@ short_bio: >-
   <p>
     I am a Master's student in the College of Mechatronics and Control Engineering at 
     <a href="https://www.szu.edu.cn/" target="_blank">Shenzhen University</a>. 
-    My research interests include <strong>Text-to-3D generation</strong>, <strong>diffusion models</strong>, 
+    My research areas include <strong>Text-to-3D generation</strong>, <strong>diffusion models</strong>, 
     <strong>hypergraph neural networks (HGNN)</strong>, and <strong>LoRA fine-tuning</strong>. 
     I focus on developing parameter-efficient fine-tuning strategies and hypergraph-based architectures 
     to advance multimodal learning and high-fidelity 3D content generation.
@@ -68,7 +68,7 @@ service:
 #   date: Sep. 2019 - Jul. 2021
 
 awards:
-- name: 🏆 Special Grade Academic Scholarship
+- name: 🏆 Graduate Academic Scholarship, Special Prize
   date: 2026
 - name: 🏆 Outstanding Graduate, Shenzhen University
   date: 2025

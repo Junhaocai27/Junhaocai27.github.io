@@ -1,0 +1,57 @@
+en:
+  menu: Menu
+  lang_switch: 中文
+  footer_last_updated: "Last updated:"
+  footer_text: >-
+    Copyright © 2025 <a href="mailto:caijunhao27@gmail.com">Junhao Cai</a>. All rights reserved.
+  nav:
+    home: Home
+    publications: Publications
+  profile:
+    cv: Curriculum Vitae
+    google_scholar: Google Scholar
+    github: GitHub
+    wechat: WeChat
+    twitter: Twitter
+    linkedin: LinkedIn
+    orcid: ORCID
+    close: Close
+  sections:
+    education: Education
+    experience: Experience
+    honors_awards: Honors & Awards
+    academic_service: Academic Service
+    news: News
+    selected_publications: Selected Publications
+    selected_recent_publications: Selected Recent Publications
+    view_all: view all
+    all_publications: All publications
+
+zh:
+  menu: 菜单
+  lang_switch: EN
+  footer_last_updated: "最近更新："
+  footer_text: >-
+    版权所有 © 2025 <a href="mailto:caijunhao27@gmail.com">蔡俊豪</a>。保留所有权利。
+  nav:
+    home: 首页
+    publications: 论文
+  profile:
+    cv: 简历
+    google_scholar: Google Scholar
+    github: GitHub
+    wechat: 微信
+    twitter: Twitter
+    linkedin: LinkedIn
+    orcid: ORCID
+    close: 关闭
+  sections:
+    education: 教育经历
+    experience: 经历
+    honors_awards: 荣誉奖项
+    academic_service: 学术服务
+    news: 研究动态
+    selected_publications: 代表性论文
+    selected_recent_publications: 近年代表性论文
+    view_all: 查看全部
+    all_publications: 全部论文

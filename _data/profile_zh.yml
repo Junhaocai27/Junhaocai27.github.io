@@ -1,0 +1,73 @@
+primary_name: "蔡俊豪"
+secondary_name: ""
+navbar_name: "蔡俊豪的主页"
+handwriting_image: /assets/images/etc/handwriting.png
+
+positions:
+- logo: /assets/images/badges/SZU_logo.png
+  name: 深圳大学硕士研究生 <i>(2025-至今)</i>
+
+email: "caijunhao27@gmail.com"
+github: Junhaocai27
+wechat_qrcode: /assets/images/etc/wechat.jpg
+wechat_prompt: >-
+  添加微信时请备注您的<strong>姓名</strong>和<strong>当前或曾经所在单位</strong>，谢谢！
+
+short_bio_text_justify: true
+short_bio: >-
+  <p>
+    我目前是<a href="https://www.szu.edu.cn/" target="_blank">深圳大学</a>机电与控制工程学院硕士研究生。
+    我的研究方向包括 <strong>文生 3D 生成</strong>、<strong>扩散模型</strong>、
+    <strong>超图神经网络（HGNN）</strong> 和 <strong>LoRA 微调</strong>。
+    我主要关注参数高效微调策略与基于超图的网络架构，以推进多模态学习与高保真 3D 内容生成。
+  </p>
+  <p>
+    在学业方面，我曾获得多项荣誉，包括 🏆 <strong>深圳大学优秀毕业生</strong>
+    （2025 年，<strong>5208 名毕业生中仅 333 人获评</strong>）以及
+    🏆 <strong>机电与控制工程学院荣誉学士</strong>（2025 年）。
+  </p>
+
+portrait_url: /assets/images/photos/profile.jpg
+
+education:
+- name: 深圳大学
+  logo: /assets/images/badges/SZU_logo.png
+  position: >-
+    机电与控制工程学院 <br/>
+    硕士研究生
+  date: 2025年9月 - 至今
+- name: 深圳大学
+  logo: /assets/images/badges/SZU_logo.png
+  position: >-
+    机电与控制工程学院 <br/>
+    学士
+  date: 2021年9月 - 2025年7月
+
+service:
+- name: <strong>国际计算机视觉大会</strong> 审稿人 [ICCV 2025](https://iccv.thecvf.com/)
+- name: <strong>AAAI 人工智能大会</strong> 审稿人 [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/)
+- name: <strong>IEEE/CVF 计算机视觉与模式识别会议</strong> 审稿人 [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026/)
+
+awards:
+- name: 🏆 研究生学业奖学金特等奖
+  date: 2026
+- name: 🏆 深圳大学优秀毕业生
+  date: 2025
+- name: 🏆 机电与控制工程学院荣誉学士
+  date: 2025
+- name: 🥈 第十五届蓝桥杯广东赛区二等奖（嵌入式设计与开发大学组）
+  date: 2024
+- name: 🎖️ 优秀共青团员
+  date: 2023
+- name: 🥇 公益之星一等奖（2023-2024学年）
+  date: 2024
+- name: 🏅 国家励志奖学金（2023-2024学年）
+  date: 2024
+- name: 🥉 学习之星三等奖（2023-2024学年）
+  date: 2024
+- name: 🏅 国家励志奖学金（2022-2023学年）
+  date: 2023
+- name: 🥈 学习之星二等奖（2022-2023学年）
+  date: 2023
+- name: 🥈 学习之星二等奖（2021-2022学年）
+  date: 2022

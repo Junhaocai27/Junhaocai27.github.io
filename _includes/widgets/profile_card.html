@@ -1,51 +1,58 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign locale = site.data.i18n[lang] %}
+{% if lang == "zh" %}
+    {% assign profile = site.data.profile_zh %}
+{% else %}
+    {% assign profile = site.data.profile %}
+{% endif %}
 <div class="row">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-5">
                 <div class="row">
                     <div class="col">
-                        {% if site.data.profile.portrait_url %}
+                        {% if profile.portrait_url %}
                         <!-- When the screen is wider than md, float the portrait on the right -->
                         <div class="figure float-right ml-4 mb-4 d-none d-md-block">
                             <img 
-                                src="{{ site.data.profile.portrait_url | relative_url }}" 
+                                src="{{ profile.portrait_url | relative_url }}"
                                 class="figure-img img-fluid img-thumbnail" 
                                 style="height: 277px;"
                                 data-toggle="tooltip" 
                                 data-placement="top" 
-                                title="{{ site.data.profile.portrait_caption }}">
+                                title="{{ profile.portrait_caption }}">
                         </div>
                         {% endif %}
 
                         <div class="d-flex">
                             <div class="h1 font-weight-normal">
-                                <span class="primary-name">{{ site.data.profile.primary_name }}</span>
-                                {% if site.data.profile.handwriting_image %}
-                                <img src="{{ site.data.profile.handwriting_image | relative_url }}" alt="Handwriting" style="height: 50px; margin-left: 10px; vertical-align: middle;">
+                                <span class="primary-name">{{ profile.primary_name }}</span>
+                                {% if profile.handwriting_image %}
+                                <img src="{{ profile.handwriting_image | relative_url }}" alt="Handwriting" style="height: 50px; margin-left: 10px; vertical-align: middle;">
                                 {% endif %}
-                                <small>{{ site.data.profile.secondary_name }}</small>
+                                <small>{{ profile.secondary_name }}</small>
                             </div>
-                            {% if site.data.profile.portrait_url %}
+                            {% if profile.portrait_url %}
                             <div class="ml-auto d-md-none">
-                                <a target="_blank" href="{{ site.data.profile.portrait_url | relative_url }}">
-                                    <img src="{{ site.data.profile.portrait_url | relative_url }}" class="rounded profile-portrait-mobile" alt="Portrait">
+                                <a target="_blank" href="{{ profile.portrait_url | relative_url }}">
+                                    <img src="{{ profile.portrait_url | relative_url }}" class="rounded profile-portrait-mobile" alt="Portrait">
                                 </a>
                             </div>
                             {% endif %}
                         </div>
                         <div class="text-profile-position">
-                            {% for position in site.data.profile.positions %}
+                            {% for position in profile.positions %}
                             {% if position.logo -%}
                             <img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge"/>
                             {%- endif %}
                             {{ position.name }}<br/>
                             {% endfor %}
                         </div>
-                        <div class="text-profile-bio mt-3" {% if site.data.profile.short_bio_text_justify %}style="text-align: justify;"{% endif %}>
-                            {{ site.data.profile.short_bio }}
+                        <div class="text-profile-bio mt-3" {% if profile.short_bio_text_justify %}style="text-align: justify;"{% endif %}>
+                            {{ profile.short_bio }}
                         </div>
-                        {% if site.data.profile.cv_link %}
-                            <a target="_blank" href="{{ site.data.profile.cv_link | relative_url }}"><i class="fas fa-file-alt"></i> Curriculum Vitae</a> <br/>
+                        {% if profile.cv_link %}
+                            <a target="_blank" href="{{ profile.cv_link | relative_url }}"><i class="fas fa-file-alt"></i> {{ locale.profile.cv }}</a> <br/>
                         {% endif %}
                     </div>
         
@@ -53,48 +60,48 @@
                 <hr />
                 <div class="row">
                     <div class="col">
-                        <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
-                            <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
+                        <a class="pr-3 no-break" href="mailto:{{ profile.email | encode_email }}">
+                            <i class="fas fa-at"></i> <span class="email-text">{{ profile.email | replace: "@", "(at)" }}</span>
                         </a>
 
-                        {% if site.data.profile.gscholar %}
-                        {%- if site.data.profile.gscholar contains 'scholar.google' -%}
-                        {%- assign gscholar_url = site.data.profile.gscholar -%}
+                        {% if profile.gscholar %}
+                        {%- if profile.gscholar contains 'scholar.google' -%}
+                        {%- assign gscholar_url = profile.gscholar -%}
                         {%- else -%}
-                        {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+                        {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: profile.gscholar -%}
                         {%- endif -%}
                         <a class="pr-3 no-break" target="_blank" href="{{ gscholar_url }}">
-                            <i class="fab fa-google-scholar"></i> Google Scholar
+                            <i class="fab fa-google-scholar"></i> {{ locale.profile.google_scholar }}
                         </a>
                         {% endif %}
                         
-                        {% if site.data.profile.github %}
-                        <a class="pr-3 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
-                            <i class="fab fa-github"></i> GitHub
+                        {% if profile.github %}
+                        <a class="pr-3 no-break" target="_blank" href="https://github.com/{{ profile.github }}">
+                            <i class="fab fa-github"></i> {{ locale.profile.github }}
                         </a>
                         {% endif %}
 
-                        {% if site.data.profile.wechat_qrcode %}
+                        {% if profile.wechat_qrcode %}
                         <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">
-                            <i class="fab fa-weixin"></i> WeChat
+                            <i class="fab fa-weixin"></i> {{ locale.profile.wechat }}
                         </a>
                         {% endif %}
 
-                        {% if site.data.profile.twitter %}
-                        <a class="pr-3 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
-                            <i class="fab fa-twitter"></i> Twitter
+                        {% if profile.twitter %}
+                        <a class="pr-3 no-break" target="_blank" href="https://twitter.com/{{ profile.twitter }}">
+                            <i class="fab fa-twitter"></i> {{ locale.profile.twitter }}
                         </a>
                         {% endif %}
 
-                        {% if site.data.profile.linkedin %}
-                        <a class="pr-3 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
-                            <i class="fab fa-linkedin"></i> LinkedIn
+                        {% if profile.linkedin %}
+                        <a class="pr-3 no-break" target="_blank" href="https://www.linkedin.com/in/{{ profile.linkedin }}">
+                            <i class="fab fa-linkedin"></i> {{ locale.profile.linkedin }}
                         </a>
                         {% endif %}
 
-                        {% if site.data.profile.orcid %}
-                        <a class="pr-3 no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
-                            <i class="fab fa-orcid"></i> ORCID
+                        {% if profile.orcid %}
+                        <a class="pr-3 no-break" target="_blank" href="https://orcid.org/{{ profile.orcid }}">
+                            <i class="fab fa-orcid"></i> {{ locale.profile.orcid }}
                         </a>
                         {% endif %}
                     </div>
@@ -104,20 +111,20 @@
     </div>
 </div>
 
-{% if site.data.profile.wechat_qrcode %}
+{% if profile.wechat_qrcode %}
 <div class="modal fade" id="modal-wechat" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-body p-0">
-                <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid">
+                <img src="{{ profile.wechat_qrcode | relative_url }}" class="img-fluid">
             </div>
-            {% if site.data.profile.wechat_prompt %}
+            {% if profile.wechat_prompt %}
             <div class="modal-body p-1">
-                {{ site.data.profile.wechat_prompt }}
+                {{ profile.wechat_prompt }}
             </div>
             {% endif %}
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">{{ locale.profile.close }}</button>
             </div>
         </div>
     </div>

@@ -5,6 +5,10 @@ body {
     padding-top: 5.0rem;
 }
 
+body.lang-zh {
+    font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 700;
@@ -45,11 +49,22 @@ h1, h2, h3, h4, h5, h6,
     overflow-wrap: break-word;
 }
 
+body.lang-zh .text-profile-bio {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+}
+
 /* 主姓名样式 */
 .primary-name {
     font-family: "Playfair Display", "Georgia", serif !important;
     font-weight: 600;
     letter-spacing: 1px;
+}
+
+body.lang-zh .primary-name {
+    font-family: "Noto Serif SC", "STSong", "Songti SC", serif !important;
+    letter-spacing: 0;
 }
 
 .navbar {

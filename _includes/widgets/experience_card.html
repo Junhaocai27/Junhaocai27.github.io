@@ -1,14 +1,21 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign locale = site.data.i18n[lang] %}
+{% if lang == "zh" %}
+    {% assign profile = site.data.profile_zh %}
+{% else %}
+    {% assign profile = site.data.profile %}
+{% endif %}
 <div class="row mt-3">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
                 <div class="row" data-masonry='{"percentPosition": true }'>
-                    {% if site.data.profile.education %}
+                    {% if profile.education %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
-                            <h6>Education</h6>
+                            <h6>{{ locale.sections.education }}</h6>
                             <ul class="list-unstyled mb-1">
-                                {% for item in site.data.profile.education %}
+                                {% for item in profile.education %}
                                 <li class="media mb-1">
                                     <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 18px;" class="mr-1 mt-1">
                                     <div class="media-body">
@@ -26,12 +33,12 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.experience %}
+                    {% if profile.experience %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
-                            <h6>Experience</h6>
+                            <h6>{{ locale.sections.experience }}</h6>
                             <ul class="list-unstyled mb-1">
-                                {% for item in site.data.profile.experience %}
+                                {% for item in profile.experience %}
                                 <li class="media mb-1">
                                     <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 18px;" class="mr-1 mt-1">
                                     <div class="media-body">
@@ -49,12 +56,12 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.awards %}
+                    {% if profile.awards %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
-                            <h6>Honors & Awards</h6>
+                            <h6>{{ locale.sections.honors_awards }}</h6>
                             <ul class="list small pl-3 mb-1">
-                                {% for item in site.data.profile.awards %}
+                                {% for item in profile.awards %}
                                 <li>
                                     <div class="d-flex">
                                         <div>{{ item.name }}</div>
@@ -67,12 +74,12 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.service %}
+                    {% if profile.service %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
-                            <h6>Academic Service</h6>
+                            <h6>{{ locale.sections.academic_service }}</h6>
                             <ul class="list small pl-3 mb-1">
-                                {% for item in site.data.profile.service %}
+                                {% for item in profile.service %}
                                 <li>
                                     <div>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
                                 </li>
