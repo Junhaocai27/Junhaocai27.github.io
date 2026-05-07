@@ -756,12 +756,15 @@ body.lang-zh .news-year {
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: var(--radius-md);
-    background: var(--portrait-backdrop);
+    background: transparent;
 }
 
 .publication-cover img,
 .publication-cover svg {
     display: block;
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
 }
 
 .publication-year-card {
@@ -807,16 +810,15 @@ body.lang-zh .news-year {
     overflow: hidden;
     margin: 1rem var(--publication-mobile-gutter) 0;
     border: 1px solid var(--line);
-    background: var(--portrait-backdrop);
+    background: transparent;
     border-radius: 14px;
 }
 
 .publication-mobile-cover-image {
     display: block;
     width: 100%;
-    aspect-ratio: 3 / 2;
     height: auto;
-    object-fit: contain;
+    border-radius: inherit;
 }
 
 .publication-mobile-surface {
