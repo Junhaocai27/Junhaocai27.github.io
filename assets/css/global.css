@@ -814,17 +814,18 @@ body.lang-zh .news-year {
 .publication-mobile-cover-image {
     display: block;
     width: 100%;
-    height: clamp(132px, 38vw, 176px);
+    aspect-ratio: 3 / 2;
+    height: auto;
     object-fit: contain;
 }
 
 .publication-mobile-surface {
-    background: transparent;
-    padding: 0.95rem var(--publication-mobile-gutter) 1rem;
+    background: var(--surface-strong);
 }
 
 .publication-mobile-content {
     width: 100%;
+    padding: 0.95rem var(--publication-mobile-gutter) 1rem;
 }
 
 .publication-mobile-card,
