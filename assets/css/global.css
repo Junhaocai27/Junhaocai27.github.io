@@ -274,11 +274,12 @@ body.lang-zh .site-navbar .navbar-brand {
 html[data-theme="dark"] .site-navbar .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.12);
-    color: #f4f4f0;
+    color: #ffffff !important;
 }
 
 html[data-theme="dark"] .site-navbar .navbar-toggler:hover,
 html[data-theme="dark"] .site-navbar .navbar-toggler:focus {
+    color: #ffffff !important;
     border-color: rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.18);
 }
@@ -791,6 +792,7 @@ body.lang-zh .news-year {
 }
 
 .publication-mobile-card {
+    --publication-mobile-gutter: 0.95rem;
     overflow: hidden;
     background: var(--portrait-backdrop);
     padding: 6px;
@@ -803,8 +805,9 @@ body.lang-zh .news-year {
 
 .publication-mobile-cover-block {
     overflow: hidden;
+    margin: 0 var(--publication-mobile-gutter);
     background: var(--portrait-backdrop);
-    border-bottom: 1px solid var(--line);
+    border-radius: 14px;
 }
 
 .publication-mobile-cover-image {
@@ -817,11 +820,16 @@ body.lang-zh .news-year {
 
 .publication-mobile-surface {
     background: var(--surface-strong);
+    padding: 0 var(--publication-mobile-gutter) 0.95rem;
+}
+
+.publication-mobile-content {
+    width: 100%;
+    padding-top: 0.95rem;
 }
 
 .publication-mobile-card,
 .publication-mobile-shell,
-.publication-mobile-cover-block,
 .publication-mobile-surface {
     border-radius: inherit;
 }
