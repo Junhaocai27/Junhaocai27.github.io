@@ -792,7 +792,7 @@ body.lang-zh .news-year {
 }
 
 .publication-mobile-card {
-    --publication-mobile-inset: 0.95rem;
+    --publication-mobile-gutter: 1.5rem;
     overflow: hidden;
     background: var(--portrait-backdrop);
     padding: 6px;
@@ -801,12 +801,12 @@ body.lang-zh .news-year {
 .publication-mobile-shell {
     overflow: hidden;
     background: var(--surface-strong);
-    padding: var(--publication-mobile-inset);
 }
 
 .publication-mobile-cover-block {
     overflow: hidden;
-    width: 100%;
+    margin: 1rem var(--publication-mobile-gutter) 0;
+    border: 1px solid var(--line);
     background: var(--portrait-backdrop);
     border-radius: 14px;
 }
@@ -814,14 +814,13 @@ body.lang-zh .news-year {
 .publication-mobile-cover-image {
     display: block;
     width: 100%;
-    aspect-ratio: 3 / 2;
-    height: auto;
-    object-fit: cover;
+    height: clamp(132px, 38vw, 176px);
+    object-fit: contain;
 }
 
 .publication-mobile-surface {
     background: transparent;
-    padding-top: 0.95rem;
+    padding: 0.95rem var(--publication-mobile-gutter) 1rem;
 }
 
 .publication-mobile-content {
