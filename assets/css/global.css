@@ -37,6 +37,7 @@
     --eyebrow-bg: rgba(255, 255, 255, 0.88);
     --pill-bg: rgba(255, 255, 255, 0.78);
     --portrait-backdrop: #ece7de;
+    --publication-mobile-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.9));
 }
 
 html[data-theme="dark"] {
@@ -76,6 +77,7 @@ html[data-theme="dark"] {
     --eyebrow-bg: rgba(255, 255, 255, 0.06);
     --pill-bg: rgba(255, 255, 255, 0.05);
     --portrait-backdrop: #151719;
+    --publication-mobile-surface: linear-gradient(180deg, rgba(18, 19, 21, 0.62), rgba(18, 19, 21, 0.86));
 }
 
 html {
@@ -761,7 +763,9 @@ body.lang-zh .news-year {
 }
 
 .publication-mobile-surface {
-    background-color: var(--surface-strong);
+    background: var(--publication-mobile-surface);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
 }
 
 .abstract-links {
