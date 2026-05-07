@@ -30,7 +30,16 @@
     </div>
 </div>
 
-<div class="row no-gutters d-md-none publication-item {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray {% if include.first %}rounded-xl-top{% endif %} {% if include.last %}rounded-xl-bottom{% endif %} {% if item.cover %}lazy{% endif %}" data-src="{{ item.cover | relative_url }}">
+<div class="row no-gutters d-md-none publication-item publication-mobile-card {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray {% if include.first %}rounded-xl-top{% endif %} {% if include.last %}rounded-xl-bottom{% endif %}">
+    {% if item.cover %}
+    <div class="publication-mobile-cover">
+        <img src="{{ item.cover | relative_url }}" alt="{{ item.title }}" class="publication-mobile-cover-image" loading="lazy">
+    </div>
+    {% else %}
+    <div class="publication-mobile-cover publication-mobile-cover-fallback">
+        <svg class="bubble-visual-hash publication-mobile-cover-image" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>
+    </div>
+    {% endif %}
     <div class="w-100 publication-mobile-surface {% if include.first %}rounded-xl-top{% endif %} {% if include.last %}rounded-xl-bottom{% endif %}">
         <div class="d-flex align-items-start flex-column py-3 px-4">
             <div class="mb-auto"></div>

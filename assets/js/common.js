@@ -3,6 +3,7 @@ $(function () {
     var themeStorageKey = "homepage-theme";
     var $themeToggle = $("#theme-toggle");
     var $wechatModal = $("#modal-wechat");
+    var $navbarResponsive = $("#navbarResponsive");
 
     function cleanupModalArtifacts() {
         $("body").removeClass("modal-open wechat-modal-open").css("padding-right", "");
@@ -38,6 +39,9 @@ $(function () {
     $themeToggle.on("click", function () {
         setTheme(getCurrentTheme() === "dark" ? "light" : "dark");
         this.blur();
+        if ($navbarResponsive.hasClass("show")) {
+            $navbarResponsive.collapse("hide");
+        }
     });
 
     $wechatModal.on('shown.bs.modal', function () {
