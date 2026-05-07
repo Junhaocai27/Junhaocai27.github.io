@@ -255,6 +255,32 @@ body.lang-zh .site-navbar .navbar-brand {
     border: 1px solid var(--line);
     border-radius: 999px;
     background: var(--nav-button-bg);
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.site-navbar .navbar-toggler i {
+    color: inherit;
+}
+
+.site-navbar .navbar-toggler:hover,
+.site-navbar .navbar-toggler:focus {
+    color: var(--ink);
+    border-color: var(--line-strong);
+    background: var(--eyebrow-bg);
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .site-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+    color: #f4f4f0;
+}
+
+html[data-theme="dark"] .site-navbar .navbar-toggler:hover,
+html[data-theme="dark"] .site-navbar .navbar-toggler:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .nav-theme-toggle {
@@ -764,51 +790,38 @@ body.lang-zh .news-year {
     line-height: 1.65;
 }
 
-.publication-mobile-surface {
-    position: relative;
-    z-index: 1;
-    min-height: 15rem;
-    background: var(--publication-mobile-surface);
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(1.5px);
-}
-
 .publication-mobile-card {
-    position: relative;
     overflow: hidden;
     background: var(--portrait-backdrop);
     padding: 6px;
 }
 
-.publication-mobile-inner {
-    position: relative;
-    min-height: 15rem;
+.publication-mobile-shell {
     overflow: hidden;
+    background: var(--surface-strong);
 }
 
-.publication-mobile-cover {
-    position: absolute;
-    inset: 0;
+.publication-mobile-cover-block {
     overflow: hidden;
-    border-radius: inherit;
-}
-
-.publication-mobile-cover::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--publication-mobile-cover-mask);
+    background: var(--portrait-backdrop);
+    border-bottom: 1px solid var(--line);
 }
 
 .publication-mobile-cover-image {
     display: block;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 3 / 2;
+    height: auto;
     object-fit: cover;
 }
 
+.publication-mobile-surface {
+    background: var(--surface-strong);
+}
+
 .publication-mobile-card,
-.publication-mobile-inner,
+.publication-mobile-shell,
+.publication-mobile-cover-block,
 .publication-mobile-surface {
     border-radius: inherit;
 }

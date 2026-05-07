@@ -41,14 +41,15 @@ $(function () {
         var isMenuOpen = $navbarResponsive.hasClass("show") || $navbarToggleButton.attr("aria-expanded") === "true";
         if (!isMenuOpen) return;
 
-        if ($navbarToggleButton.is(":visible")) {
-            $navbarToggleButton.trigger("click");
+        var toggleButtonEl = $navbarToggleButton.get(0);
+        if (toggleButtonEl && window.getComputedStyle(toggleButtonEl).display !== "none") {
+            toggleButtonEl.click();
         }
 
-        window.setTimeout(function () {
-            $navbarResponsive.removeClass("show collapsing").css("height", "");
+        window.setTimeout(function forceCloseNavbarMenu() {
+            $navbarResponsive.addClass("collapse").removeClass("show collapsing").css("height", "");
             $navbarToggleButton.addClass("collapsed").attr("aria-expanded", "false");
-        }, 220);
+        }, 320);
     }
 
     updateThemeToggle(getCurrentTheme());
