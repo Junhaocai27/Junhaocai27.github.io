@@ -36,14 +36,19 @@ $(function () {
     }
 
     function closeNavbarMenu() {
-        if (!$navbarResponsive.length) return;
+        if (!$navbarResponsive.length || !$navbarToggleButton.length) return;
 
-        try {
-            $navbarResponsive.collapse("hide");
-        } catch (error) {}
+        var isMenuOpen = $navbarResponsive.hasClass("show") || $navbarToggleButton.attr("aria-expanded") === "true";
+        if (!isMenuOpen) return;
 
-        $navbarResponsive.removeClass("show collapsing").css("height", "");
-        $navbarToggleButton.addClass("collapsed").attr("aria-expanded", "false");
+        if ($navbarToggleButton.is(":visible")) {
+            $navbarToggleButton.trigger("click");
+        }
+
+        window.setTimeout(function () {
+            $navbarResponsive.removeClass("show collapsing").css("height", "");
+            $navbarToggleButton.addClass("collapsed").attr("aria-expanded", "false");
+        }, 220);
     }
 
     updateThemeToggle(getCurrentTheme());
