@@ -2,13 +2,13 @@
 {% assign locale = site.data.i18n[lang] %}
 {% assign news_by_year = site.news | sort: "date" | reverse | slice: 0, include.limit | group_by_exp: "item", "item.date | date: '%Y'" -%}
 
-<div class="my-3 bg-white shadow-sm rounded-xl">
-    <h6 class="p-3 mb-0 border-bottom border-gray"><i class="fas fa-rss"></i> {{ locale.sections.news }}</h6>
-    <div class="px-3 pb-1">
+<div class="my-3 bg-white shadow-sm rounded-xl section-card">
+    <h6 class="p-3 mb-0 border-bottom border-gray section-heading"><span><i class="fas fa-rss"></i> {{ locale.sections.news }}</span></h6>
+    <div class="news-list">
         {% for year in news_by_year %}
-        <div class="media py-1 {% if not_first -%}border-top border-gray{%- endif %}">
+        <div class="media news-year-row">
             {% assign not_first = true %}
-            <div class="mr-3 text-muted my-1">{{ year.name }}</div>
+            <div class="mr-3 text-muted my-1 news-year">{{ year.name }}</div>
             <div class="media-body">
                 {% for item in year.items %}
                 {% if lang == "zh" and item.title_zh %}
@@ -16,9 +16,9 @@
                 {% else %}
                     {% assign display_title = item.title %}
                 {% endif %}
-                <div class="my-1 d-flex">
+                <div class="my-1 d-flex news-item">
                     <div>{{ display_title }}</div>
-                    <div class="ml-auto mt-auto text-muted no-break"><i>{% if lang == "zh" %}{{ item.date | date: "%m-%d" }}{% else %}{{ item.date | date: "%b %d" }}{% endif %}</i></div>
+                    <div class="ml-auto mt-auto text-muted no-break news-date"><i>{% if lang == "zh" %}{{ item.date | date: "%m-%d" }}{% else %}{{ item.date | date: "%b %d" }}{% endif %}</i></div>
                 </div>
                 {% endfor %}
             </div>

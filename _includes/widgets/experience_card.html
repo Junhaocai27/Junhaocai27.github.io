@@ -7,13 +7,13 @@
 {% endif %}
 <div class="row mt-3">
     <div class="col">
-        <div class="card border-0 shadow-sm bg-white">
+        <div class="card border-0 shadow-sm bg-white section-card info-grid-card">
             <div class="card-body p-4">
-                <div class="row" data-masonry='{"percentPosition": true }'>
-                    {% if profile.education %}
-                    <div class="col-md-6">
-                        <div class="mx-2 my-1">
-                            <h6>{{ locale.sections.education }}</h6>
+                <div class="row info-grid-layout">
+                    <div class="col-md-6 info-grid-col info-stack-col">
+                        {% if profile.education %}
+                        <div class="mx-2 my-1 info-panel">
+                            <h6 class="panel-heading">{{ locale.sections.education }}</h6>
                             <ul class="list-unstyled mb-1">
                                 {% for item in profile.education %}
                                 <li class="media mb-1">
@@ -30,13 +30,26 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                    </div>
-                    {% endif %}
+                        {% endif %}
 
-                    {% if profile.experience %}
-                    <div class="col-md-6">
-                        <div class="mx-2 my-1">
-                            <h6>{{ locale.sections.experience }}</h6>
+                        {% if profile.service %}
+                        <div class="mx-2 my-1 info-panel">
+                            <h6 class="panel-heading">{{ locale.sections.academic_service }}</h6>
+                            <ul class="list small pl-3 mb-1">
+                                {% for item in profile.service %}
+                                <li>
+                                    <div>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-6 info-grid-col info-stack-col">
+                        {% if profile.experience %}
+                        <div class="mx-2 my-1 info-panel">
+                            <h6 class="panel-heading">{{ locale.sections.experience }}</h6>
                             <ul class="list-unstyled mb-1">
                                 {% for item in profile.experience %}
                                 <li class="media mb-1">
@@ -53,13 +66,11 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                    </div>
-                    {% endif %}
+                        {% endif %}
 
-                    {% if profile.awards %}
-                    <div class="col-md-6">
-                        <div class="mx-2 my-1">
-                            <h6>{{ locale.sections.honors_awards }}</h6>
+                        {% if profile.awards %}
+                        <div class="mx-2 my-1 info-panel">
+                            <h6 class="panel-heading">{{ locale.sections.honors_awards }}</h6>
                             <ul class="list small pl-3 mb-1">
                                 {% for item in profile.awards %}
                                 <li>
@@ -71,26 +82,9 @@
                                 {% endfor %}
                             </ul>
                         </div>
+                        {% endif %}
                     </div>
-                    {% endif %}
-
-                    {% if profile.service %}
-                    <div class="col-md-6">
-                        <div class="mx-2 my-1">
-                            <h6>{{ locale.sections.academic_service }}</h6>
-                            <ul class="list small pl-3 mb-1">
-                                {% for item in profile.service %}
-                                <li>
-                                    <div>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                    {% endif %}
-
                 </div>
-
             </div>
         </div>
     </div>

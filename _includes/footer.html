@@ -1,17 +1,25 @@
 {% assign lang = page.lang | default: "en" %}
 {% assign locale = site.data.i18n[lang] %}
+{% if lang == "zh" %}
+    {% assign profile = site.data.profile_zh %}
+{% else %}
+    {% assign profile = site.data.profile %}
+{% endif %}
 <footer class="footer">
     <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
-        {% include visitor_stats.html %}
-        <div class="row my-3">
+        <div class="row my-3 site-footer-inner align-items-center">
             <div class="col-6">
-                <div class="text-muted">
+                <div class="text-muted footer-note">
                     <i>{{ locale.footer_last_updated }} {% if lang == "zh" %}{{ "now" | date: "%Y年%m月" }}{% else %}{{ "now" | date: "%b %Y" }}{% endif %}</i>
                 </div>
             </div>
             <div class="col-6">
-                <div class="text-right text-muted">
-                    {{ locale.footer_text | default: site.data.display.footer_text }}
+                <div class="text-right text-muted footer-brand">
+                    {% if lang == "zh" %}
+                        版权所有 © {{ "now" | date: "%Y" }} <a href="mailto:{{ profile.email }}">{{ profile.primary_name }}</a>。保留所有权利。
+                    {% else %}
+                        Copyright © {{ "now" | date: "%Y" }} <a href="mailto:{{ profile.email }}">{{ profile.primary_name }}</a>. All rights reserved.
+                    {% endif %}
                 </div>
             </div>
         </div>

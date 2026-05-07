@@ -1,16 +1,23 @@
 en:
   menu: Menu
   lang_switch: 中文
+  theme_toggle: Toggle theme
+  theme_light: Light
+  theme_dark: Dark
   footer_last_updated: "Last updated:"
   footer_text: >-
-    Copyright © 2025 <a href="mailto:caijunhao27@gmail.com">Junhao Cai</a>. All rights reserved.
+    Copyright © 2026 <a href="mailto:caijunhao27@gmail.com">Junhao Cai</a>. All rights reserved.
   nav:
     home: Home
     publications: Publications
   profile:
     cv: Curriculum Vitae
+    email_me: Email Me
     google_scholar: Google Scholar
     github: GitHub
+    hero_label: Academic Homepage
+    research_focus: Research Focus
+    view_publications: View Publications
     wechat: WeChat
     twitter: Twitter
     linkedin: LinkedIn
@@ -30,16 +37,23 @@ en:
 zh:
   menu: 菜单
   lang_switch: EN
+  theme_toggle: 切换主题
+  theme_light: 浅色
+  theme_dark: 深色
   footer_last_updated: "最近更新："
   footer_text: >-
-    版权所有 © 2025 <a href="mailto:caijunhao27@gmail.com">蔡俊豪</a>。保留所有权利。
+    版权所有 © 2026 <a href="mailto:caijunhao27@gmail.com">蔡俊豪</a>。保留所有权利。
   nav:
     home: 首页
     publications: 论文
   profile:
     cv: 简历
-    google_scholar: Google Scholar
+    email_me: 发邮件
+    google_scholar: 谷歌学术
     github: GitHub
+    hero_label: 学术主页
+    research_focus: 研究方向
+    view_publications: 查看论文
     wechat: 微信
     twitter: Twitter
     linkedin: LinkedIn

@@ -8,12 +8,20 @@ positions:
   name: 深圳大学硕士研究生 <i>(2025-至今)</i>
 
 email: "caijunhao27@gmail.com"
+gscholar: "https://scholar.google.com.hk/citations?user=2YRzNH8AAAAJ&hl=zh-CN"
 github: Junhaocai27
 wechat_qrcode: /assets/images/etc/wechat.jpg
 wechat_prompt: >-
   添加微信时请备注您的<strong>姓名</strong>和<strong>当前或曾经所在单位</strong>，谢谢！
 
 short_bio_text_justify: true
+tagline: "聚焦文生 3D、多模态学习与高效微调的生成式 AI 研究。"
+research_interests:
+- 文生 3D 生成
+- 扩散模型
+- 多模态学习
+- 超图神经网络
+- LoRA 微调
 short_bio: >-
   <p>
     我目前是<a href="https://www.szu.edu.cn/" target="_blank">深圳大学</a>机电与控制工程学院硕士研究生。
@@ -45,6 +53,7 @@ education:
 
 service:
 - name: <strong>国际计算机视觉大会</strong> 审稿人 [ICCV 2025](https://iccv.thecvf.com/)
+- name: <strong>欧洲计算机视觉会议</strong> 审稿人 [ECCV 2026](https://eccv.ecva.net/)
 - name: <strong>AAAI 人工智能大会</strong> 审稿人 [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/)
 - name: <strong>IEEE/CVF 计算机视觉与模式识别会议</strong> 审稿人 [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026/)
 
