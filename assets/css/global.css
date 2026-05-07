@@ -767,6 +767,7 @@ body.lang-zh .news-year {
 .publication-mobile-surface {
     position: relative;
     z-index: 1;
+    min-height: 100%;
     background: var(--publication-mobile-surface);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(1.5px);
@@ -774,6 +775,7 @@ body.lang-zh .news-year {
 
 .publication-mobile-card {
     position: relative;
+    min-height: 15rem;
     overflow: hidden;
     background: var(--portrait-backdrop);
 }
@@ -781,6 +783,8 @@ body.lang-zh .news-year {
 .publication-mobile-cover {
     position: absolute;
     inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
 }
 
 .publication-mobile-cover::after {
@@ -795,6 +799,11 @@ body.lang-zh .news-year {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.publication-mobile-card,
+.publication-mobile-surface {
+    border-radius: inherit;
 }
 
 .abstract-links {

@@ -4,6 +4,7 @@ $(function () {
     var $themeToggle = $("#theme-toggle");
     var $wechatModal = $("#modal-wechat");
     var $navbarResponsive = $("#navbarResponsive");
+    var $navbarToggleButton = $("#navbar-toggle-button");
 
     function cleanupModalArtifacts() {
         $("body").removeClass("modal-open wechat-modal-open").css("padding-right", "");
@@ -34,14 +35,23 @@ $(function () {
         updateThemeToggle(theme);
     }
 
+    function closeNavbarMenu() {
+        if (!$navbarResponsive.length) return;
+
+        try {
+            $navbarResponsive.collapse("hide");
+        } catch (error) {}
+
+        $navbarResponsive.removeClass("show collapsing").css("height", "");
+        $navbarToggleButton.addClass("collapsed").attr("aria-expanded", "false");
+    }
+
     updateThemeToggle(getCurrentTheme());
 
     $themeToggle.on("click", function () {
         setTheme(getCurrentTheme() === "dark" ? "light" : "dark");
         this.blur();
-        if ($navbarResponsive.hasClass("show")) {
-            $navbarResponsive.collapse("hide");
-        }
+        window.setTimeout(closeNavbarMenu, 0);
     });
 
     $wechatModal.on('shown.bs.modal', function () {
