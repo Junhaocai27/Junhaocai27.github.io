@@ -788,6 +788,77 @@ body.lang-zh .news-year {
     line-height: 1.42;
 }
 
+.publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.6rem !important;
+}
+
+.publication-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    min-height: 2.2rem;
+    padding: 0.28rem 0.82rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--pill-bg);
+    color: var(--ink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background-color 0.22s ease, color 0.22s ease;
+}
+
+.publication-link:hover,
+.publication-link:focus {
+    transform: translateY(-1px);
+    border-color: var(--line-strong);
+    background: var(--hover-fill);
+    color: var(--ink);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.publication-link-icon {
+    font-size: 0.92em;
+    color: var(--muted);
+    transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.publication-link:hover .publication-link-icon,
+.publication-link:focus .publication-link-icon {
+    color: var(--ink);
+    transform: translateY(-0.5px);
+}
+
+.publication-link--paper .publication-link-icon {
+    color: #4d74ff;
+}
+
+.publication-link--code .publication-link-icon {
+    color: #7b5cff;
+}
+
+.publication-link--project .publication-link-icon {
+    color: #0b9f8f;
+}
+
+html[data-theme="dark"] .publication-link--paper .publication-link-icon {
+    color: #7da0ff;
+}
+
+html[data-theme="dark"] .publication-link--code .publication-link-icon {
+    color: #a88dff;
+}
+
+html[data-theme="dark"] .publication-link--project .publication-link-icon {
+    color: #52c8bc;
+}
+
 .page-publications .publication-item .small,
 .page-publications .publication-item .text-muted {
     font-size: 0.92rem;
@@ -834,36 +905,6 @@ body.lang-zh .news-year {
 .publication-mobile-shell,
 .publication-mobile-surface {
     border-radius: inherit;
-}
-
-.abstract-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.38rem;
-    margin-top: 0.5rem!important;
-}
-
-.abstract-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: top;
-    margin: 0;
-    min-height: 2rem;
-    padding: 0.22rem 0.65rem;
-    border-radius: 999px;
-    background: var(--accent);
-    color: var(--accent-contrast);
-    font-size: 0.74rem;
-    line-height: 1.5;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.abstract-links a:hover {
-    opacity: 0.86;
-    color: var(--accent-contrast);
 }
 
 .section-footer-link {

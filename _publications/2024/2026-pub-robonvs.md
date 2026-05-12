@@ -24,8 +24,8 @@ authors:
   - Renjing Xu
 links:
   Paper: https://arxiv.org/abs/2603.26757
-  # Code: https://code-link  # Optional
-  # Project: https://project-link  # Optional
+  Code: https://github.com/YoungYNG/RoboNVS
+  Project: https://youngyng.github.io/RoboNVS.github.io/
 ---
 
 <!-- ---
