@@ -1,0 +1,31 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Image placeholder</title>
+  <desc id="desc">A decorative placeholder shown before lazy-loaded images are displayed.</desc>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="22" x2="272" y2="178" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F1E8"/>
+      <stop offset="1" stop-color="#ECE5D9"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="86" y1="64" x2="212" y2="152" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#F4EEE4" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" rx="24" fill="url(#bg)"/>
+  <path d="M0 34H300" stroke="#DCCFBD" stroke-opacity="0.72"/>
+  <path d="M0 68H300" stroke="#DCCFBD" stroke-opacity="0.48"/>
+  <path d="M0 102H300" stroke="#DCCFBD" stroke-opacity="0.48"/>
+  <path d="M0 136H300" stroke="#DCCFBD" stroke-opacity="0.48"/>
+  <path d="M0 170H300" stroke="#DCCFBD" stroke-opacity="0.72"/>
+  <path d="M42 0V200" stroke="#DCCFBD" stroke-opacity="0.42"/>
+  <path d="M86 0V200" stroke="#DCCFBD" stroke-opacity="0.42"/>
+  <path d="M130 0V200" stroke="#DCCFBD" stroke-opacity="0.42"/>
+  <path d="M174 0V200" stroke="#DCCFBD" stroke-opacity="0.42"/>
+  <path d="M218 0V200" stroke="#DCCFBD" stroke-opacity="0.42"/>
+  <path d="M262 0V200" stroke="#DCCFBD" stroke-opacity="0.42"/>
+  <rect x="74" y="48" width="152" height="104" rx="18" fill="url(#panel)" stroke="#D8CAB6"/>
+  <path d="M94 129L126 97L150 117L184 85L206 109" stroke="#8E7E68" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="121" cy="81" r="11" fill="#D9C5AA"/>
+  <rect x="101" y="165" width="98" height="10" rx="5" fill="#D4C4AF"/>
+  <rect x="118" y="23" width="64" height="10" rx="5" fill="#E4D7C7"/>
+</svg>
