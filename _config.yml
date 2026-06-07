@@ -72,8 +72,6 @@ collections:
     output: true
   news:
     output: false
-  showcase:
-    output: false
 
 # Reading Files
 include:
@@ -84,6 +82,8 @@ exclude:
   - backup
   - docs
   - google_scholar_crawler
+  - _showcase
+  - showcase.html
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
