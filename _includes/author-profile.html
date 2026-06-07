@@ -30,7 +30,10 @@
     {% if author_name_parts.size > 1 %}
       {% assign author_name_main = author_name_parts | first | strip %}
       {% assign author_name_alt = author_name_parts | last | strip %}
-      <h3 class="author__name">{{ author_name_main }}<br>{{ "(" | append: author_name_alt }}</h3>
+      <h3 class="author__name">
+        <span class="author__name-main">{{ author_name_main }}</span>
+        <span class="author__name-alt">{{ "(" | append: author_name_alt }}</span>
+      </h3>
     {% else %}
       <h3 class="author__name">{{ author.name }}</h3>
     {% endif %}

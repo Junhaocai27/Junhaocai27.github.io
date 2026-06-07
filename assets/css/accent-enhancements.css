@@ -31,6 +31,16 @@ body.lang-zh .author__name {
   letter-spacing: 0;
 }
 
+.author__name {
+  white-space: nowrap;
+}
+
+.author__name-main,
+.author__name-alt {
+  display: inline;
+  white-space: nowrap;
+}
+
 .masthead__menu-item--control {
   margin-left: 0.35rem;
 }
@@ -1367,16 +1377,71 @@ html[data-theme="dark"] .sidebar .author__urls_sm a:hover .far {
 }
 
 @media (max-width: 768px) {
+  h1::before,
+  .anchor::before {
+    height: 5.8rem;
+    margin-top: -5.8rem;
+  }
+
+  .masthead__inner-wrap {
+    padding-top: 0.45rem;
+    padding-bottom: 0.55rem;
+  }
+
+  .greedy-nav {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .greedy-nav > button {
+    position: static;
+    right: auto;
+    order: 2;
+    align-self: center;
+    height: auto;
+    margin-left: 0.45rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    flex: 0 0 auto;
+  }
+
   .masthead__actions {
+    order: 1;
     width: auto !important;
     margin-top: 0;
-    padding-left: 0.3rem;
+    margin-left: auto;
+    padding-left: 0;
     justify-content: flex-end;
     flex-wrap: nowrap;
+    flex: 0 0 auto;
   }
 
   .masthead__actions .masthead__control {
     padding: 0.5rem 0.82rem !important;
+  }
+
+  .greedy-nav .visible-links {
+    order: 3;
+    flex: 1 0 100%;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.15rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .greedy-nav .visible-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .greedy-nav .visible-links li {
+    flex: 0 0 auto;
+  }
+
+  .sidebar .author__name {
+    font-size: clamp(1.05rem, 4.2vw, 1.28rem);
   }
 
   .author__signature-image {
