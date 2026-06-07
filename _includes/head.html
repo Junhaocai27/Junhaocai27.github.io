@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape_once }}">
+
+{% include seo.html %}
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<meta http-equiv="cleartype" content="on">

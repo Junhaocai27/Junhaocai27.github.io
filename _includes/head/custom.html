@@ -1,0 +1,112 @@
+{% assign site_favicon = site.author.favicon | default: site.author.avatar %}
+
+<script>
+  (function() {
+    var storageKey = "homepage-theme";
+    var storedTheme = null;
+    try {
+      storedTheme = localStorage.getItem(storageKey);
+    } catch (error) {}
+
+    var initialTheme = storedTheme;
+    if (initialTheme !== "dark" && initialTheme !== "light") {
+      initialTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+
+    document.documentElement.setAttribute("data-theme", initialTheme);
+  })();
+</script>
+
+{% if site_favicon %}
+<link rel="apple-touch-icon" href="{{ site_favicon | relative_url }}">
+<link rel="icon" type="image/png" href="{{ site_favicon | relative_url }}">
+<link rel="shortcut icon" type="image/png" href="{{ site_favicon | relative_url }}">
+<meta name="msapplication-TileImage" content="{{ site_favicon | relative_url }}">
+{% endif %}
+
+<meta name="msapplication-TileColor" content="#012F63">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/accent-enhancements.css' | relative_url }}">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML" async></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var themeStorageKey = "homepage-theme";
+
+  function getCurrentTheme() {
+    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  }
+
+  function updateThemeControls(theme) {
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button) {
+      var nextLabel = theme === "dark" ? button.dataset.labelLight : button.dataset.labelDark;
+      var icon = theme === "dark" ? "fa-sun" : "fa-moon";
+      var iconNode = button.querySelector(".theme-toggle-icon");
+      var labelNode = button.querySelector(".theme-toggle-label");
+
+      button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      button.setAttribute("title", nextLabel);
+      if (iconNode) {
+        iconNode.className = "fas " + icon + " theme-toggle-icon";
+      }
+      if (labelNode) {
+        labelNode.textContent = nextLabel;
+      }
+    });
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem(themeStorageKey, theme);
+    } catch (error) {}
+    updateThemeControls(theme);
+  }
+
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.paper-box, .highlight-block').forEach(function(el) {
+    el.classList.add('fade-in-up');
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('a[href*="pdf"], a[href*="github"], a[href*="arxiv"]').forEach(function(link) {
+    link.classList.add('link-accent');
+  });
+
+  document.querySelectorAll("[data-theme-toggle]").forEach(function(button) {
+    button.addEventListener("click", function() {
+      setTheme(getCurrentTheme() === "dark" ? "light" : "dark");
+      button.blur();
+    });
+  });
+
+  updateThemeControls(getCurrentTheme());
+  document.body.classList.add('accent-border-top');
+});
+</script>

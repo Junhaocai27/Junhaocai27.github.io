@@ -1,0 +1,38 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign locale = site.data.i18n[lang] %}
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button class="hidden" aria-label="Toggle navigation menu"><div class="navicon"></div></button>
+        <ul class="visible-links">
+          {% for link in site.data.navigation.main %}
+            <li class="masthead__menu-item">
+              {% if lang == 'zh' %}
+                <a href="{{ link.url_zh | default: link.url | relative_url }}">{{ link.title_zh | default: link.title }}</a>
+              {% else %}
+                <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="masthead__actions">
+          {% if page.lang_switch_url %}
+            <a class="masthead__control" href="{{ page.lang_switch_url | relative_url }}">{{ locale.lang_switch }}</a>
+          {% endif %}
+          <button
+            type="button"
+            class="masthead__control masthead__theme-toggle"
+            data-theme-toggle
+            aria-label="{{ locale.theme_toggle }}"
+            data-label-light="{{ locale.theme_light }}"
+            data-label-dark="{{ locale.theme_dark }}">
+            <i class="fas fa-moon theme-toggle-icon" aria-hidden="true"></i>
+            <span class="theme-toggle-label">{{ locale.theme_dark }}</span>
+          </button>
+        </div>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>

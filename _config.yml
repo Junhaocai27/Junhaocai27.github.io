@@ -1,40 +1,169 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Site Settings
+locale                   : "en-US"
+lang                     : "en"
+title                    : "Junhao Cai"
+title_separator          : "-"
+subtitle                 :
+name                     : "Junhao Cai"
+description              : "Generative AI for text-to-3D, multimodal learning, and efficient adaptation."
+url                      : "https://junhaocai27.github.io"
+baseurl                  : ""
+repository               : "Junhaocai27/Junhaocai27.github.io"
+google_scholar_stats_use_cdn : true
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-baseurl: "" # the subpath of your site, e.g. /blog
+# Google Analytics
+google_analytics_id      :
 
-# Build settings
-markdown: kramdown
-plugins:
-  - jekyll-email-protect
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+baidu_site_verification  :
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Site Author
+author:
+  name             : "Junhao Cai (蔡俊豪)"
+  avatar           : "assets/images/photos/profile.jpg"
+  favicon          : "assets/images/logo.png"
+  bio              : "M.S. student at Shenzhen University"
+  location         : "Shenzhen, China"
+  employer         :
+  pubmed           :
+  googlescholar    : "https://scholar.google.com.hk/citations?user=2YRzNH8AAAAJ&hl"
+  email            : "caijunhao27@gmail.com"
+  wechat_qr        : "assets/images/etc/wechat.jpg"
+  github           : "Junhaocai27"
+  researchgate     :
+  linkedin         :
+  dblp             :
+  orcid            :
+  uri              :
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  flickr           :
+  facebook         :
+  foursquare       :
+  google_plus      :
+  keybase          :
+  instagram        :
+  impactstory      :
+  lastfm           :
+  pinterest        :
+  soundcloud       :
+  stackoverflow    :
+  steam            :
+  tumblr           :
+  twitter          :
+  vine             :
+  weibo            :
+  xing             :
+  youtube          :
+  wikipedia        :
 
-# timezone: Asia/Shanghai
+# Language Settings
+languages:
+  - en
+  - zh
+default_lang: "en"
 
+# Collections
 collections:
-  - publications
-  - news
-  - showcase
+  publications:
+    output: true
+  news:
+    output: false
+  showcase:
+    output: false
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - backup
+  - docs
+  - google_scholar_crawler
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - .github
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - config
+  - gulpfile.js
+  - log
+  - node_modules
+  - package.json
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      author_profile: true
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Asia/Shanghai
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-redirect-from
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jemoji
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/*
+   Typography
+   ========================================================================== */
+
+   $doc-font-size              : 14;
+
+   /* paragraph indention */
+   $paragraph-indent           : false; // true, false (default)
+   $indent-var                 : 0.5em;
+   
+   /* system typefaces */
+   $serif                      : Georgia, Times, serif;
+   $sans-serif                 : "Trebuchet MS", Helvetica, sans-serif;
+   // $sans-serif                 : Georgia, serif, sans-serif;
+   
+   // $sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+   $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
+   
+   /* sans serif typefaces */
+   $sans-serif-narrow          : $sans-serif;
+   $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
+   
+   /* serif typefaces */
+   $georgia                    : Georgia, serif;
+   $times                      : Times, serif;
+   $bodoni                     : "Bodoni MT", serif;
+   $calisto                    : "Calisto MT", serif;
+   $garamond                   : Garamond, serif;
+   
+   $global-font-family         : $sans-serif;
+   $header-font-family         : $sans-serif;
+   $caption-font-family        : $serif;
+   
+   /* type scale */
+   $type-size-1                : 2.441em;  // ~39.056px
+   $type-size-2                : 1.953em;  // ~31.248px
+   $type-size-3                : 1.4em;  // ~25.008px
+   $type-size-4                : 1.2em;   // ~20px
+   $type-size-5                : 1em;      // ~16px
+   $type-size-6                : 1em;   // ~12px
+   $type-size-7                : 0.6875em; // ~11px
+   $type-size-8                : 0.625em;  // ~10px
+   
+   
+   /*
+      Enhanced Colors with Rich Accent Variations
+      ========================================================================== */
+   
+   // 基础灰色系
+   $gray                       : #7a8288;
+   $dark-gray                  : mix(#000, $gray, 40%);
+   $darker-gray                : mix(#000, $gray, 60%);
+   $light-gray                 : mix(#fff, $gray, 50%);
+   $lighter-gray               : mix(#fff, $gray, 90%);
+   
+   // 主色调系统 - 深蓝色系
+   $primary-color              : #012F63;
+   $primary-light              : #1a4f8a;
+   $primary-lighter            : #336fa1;
+   $primary-dark               : #001f42;
+   $primary-darker             : #001529;
+   
+   // 强调色系统 - 珊瑚粉系
+   $accent-color               : #FE667B;
+   $accent-light               : #ff8599;
+   $accent-lighter             : #ffa4b7;
+   $accent-dark                : #e5475d;
+   $accent-darker              : #cc2840;
+   
+   // 辅助色彩
+   $secondary-color            : #6c5ce7;
+   $secondary-light            : #a29bfe;
+   $tertiary-color             : #00cec9;
+   $tertiary-light             : #55eae7;
+   
+   // 渐变色彩
+   $gradient-primary           : linear-gradient(135deg, $primary-color 0%, $primary-light 50%, $accent-color 100%);
+   $gradient-accent            : linear-gradient(135deg, $accent-color 0%, $accent-light 50%, $secondary-light 100%);
+   $gradient-subtle            : linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+   $gradient-hero              : linear-gradient(135deg, $primary-darker 0%, $primary-color 30%, $accent-dark 100%);
+   
+   // 基础背景色
+   $body-color                 : #fff;
+   $background-color           : #fff;
+   $code-background-color      : #f8f9fa;
+   $code-background-color-dark : $light-gray;
+   $text-color                 : $primary-color;
+   $border-color               : #e2e8f0;
+   
+   // 语义色彩 - 使用强调色系
+   $success-color              : $accent-color;
+   $warning-color              : #ffa726;
+   $danger-color               : #ef5350;
+   $info-color                 : $primary-light;
+   
+   /* brands */
+   $behance-color              : #1769FF;
+   $dribbble-color             : #ea4c89;
+   $facebook-color             : #3b5998;
+   $flickr-color               : #ff0084;
+   $foursquare-color           : #0072b1;
+   $github-color               : #171516;
+   $google-plus-color          : #dd4b39;
+   $instagram-color            : #517fa4;
+   $lastfm-color               : #d51007;
+   $linkedin-color             : #007bb6;
+   $pinterest-color            : #cb2027;
+   $rss-color                  : #fa9b39;
+   $soundcloud-color           : #ff3300;
+   $stackoverflow-color        : #fe7a15;
+   $tumblr-color               : #32506d;
+   $twitter-color              : #55acee;
+   $vimeo-color                : #1ab7ea;
+   $vine-color                 : #00bf8f;
+   $youtube-color              : #bb0000;
+   $xing-color                 : #006567;
+   
+   
+   /* Enhanced links with accent colors */
+   $link-color                 : $primary-color;
+   $link-color-hover           : $accent-color;
+   $link-color-visited         : $primary-light;
+   $masthead-link-color        : $primary-color;
+   $masthead-link-color-hover  : $accent-color;
+   
+   
+   /*
+      Breakpoints
+      ========================================================================== */
+   
+   @include breakpoint-set("to ems", true);
+   
+   $small                      : 600px !default;
+   $medium                     : 768px !default;
+   $medium-wide                : 900px !default;
+   $large                      : 925px !default;
+   $x-large                    : 1280px !default;
+   
+   /*
+      Grid
+      ========================================================================== */
+   
+   $right-sidebar-width-narrow : 0px;
+   $right-sidebar-width        : 0px;
+   $right-sidebar-width-wide   : 0px;
+   
+   $susy: (
+     columns: 12,
+     column-width: 120px,
+     gutters: 1/4,
+     math: fluid,
+     output: float,
+     gutter-position: after,
+     container: $large,
+     global-box-sizing: border-box,
+   );
+   
+   
+   /*
+      Enhanced Design Tokens
+      ========================================================================== */
+   
+   $border-radius              : 8px;
+   $border-radius-large        : 12px;
+   $border-radius-small        : 4px;
+   $box-shadow                 : 0 4px 15px rgba(1, 47, 99, 0.08);
+   $box-shadow-hover           : 0 8px 25px rgba(1, 47, 99, 0.12);
+   $box-shadow-accent          : 0 4px 15px rgba(254, 102, 123, 0.15);
+   $navicon-width              : 28px;
+   $navicon-height             : 4px;
+   $global-transition          : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   

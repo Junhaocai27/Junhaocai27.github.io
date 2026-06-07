@@ -1,35 +1,54 @@
 ---
+title: "Publications"
 layout: default
-title : Publications
-navbar_title: Publications
-nav_key: publications
+author_profile: true
 lang: en
+permalink: /publications/
 lang_switch_url: /zh/publications/
-body_attr: >-
-  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+body_class: page-publications
 ---
+{% assign all_pubs = site.publications | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
+{% assign pubs_by_year = all_pubs | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+<span class="anchor" id="publications-list"></span>
 
-<div class="row">
-    <div class="col-12 col-lg-10">
-        {% for year in pubs_by_year %}
-        {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
-        <div class="my-0 p-0 bg-white shadow-sm rounded-xl publication-year-card">
-            {% for item in year.items %}
-                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+# <i class="fas fa-file-alt"></i> Publications
+<p>This page collects all published and selected works currently listed on the site.</p>
+
+{% for year in pubs_by_year %}
+  <h2>{{ year.name }}</h2>
+  {% for paper in year.items %}
+    {% assign authors_text = paper.authors | join: ", " | replace: "Junhao Cai*", "<strong>Junhao Cai*</strong>" | replace: "Junhao Cai", "<strong>Junhao Cai</strong>" %}
+    {% assign cover_path = paper.cover | default: "/assets/images/empty_300x200.svg" %}
+    <div class="paper-box floating-card">
+      <div class="paper-box-image">
+        <div class="badge">{{ paper.pub_date }}</div>
+        <img src="{{ cover_path | relative_url }}" alt="{{ paper.title }} cover" width="100%">
+      </div>
+      <div class="paper-box-text">
+        <h3>{{ paper.title }}</h3>
+        <div class="authors">{{ authors_text }}</div>
+        <div class="venue"><span class="accent-text">{{ paper.pub }}</span>, {{ paper.pub_date }}</div>
+        <p>{{ paper.abstract }}</p>
+        {% if paper.links %}
+          <div class="links">
+            {% for link in paper.links %}
+              {% assign link_label = link[0] %}
+              {% assign link_url = link[1] %}
+              <a href="{{ link_url }}" class="btn-accent">
+                {% case link_label %}
+                  {% when "Paper" %}<i class="fas fa-file-alt"></i>
+                  {% when "Code" %}<i class="fab fa-github"></i>
+                  {% when "Project" %}<i class="fas fa-globe"></i>
+                  {% when "Homepage" %}<i class="fas fa-globe"></i>
+                  {% else %}<i class="fas fa-link"></i>
+                {% endcase %}
+                {{ link_label }}
+              </a>
             {% endfor %}
-        </div>
-        {% endfor %}
+          </div>
+        {% endif %}
+      </div>
     </div>
-
-    <div class="col-2 d-none d-lg-block">
-        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
-            {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-            {% endfor %}
-        </div>
-    </div>
-
-</div>
+  {% endfor %}
+{% endfor %}

@@ -24,7 +24,8 @@ links:
 ---
 title:          "你的论文标题"
 date:           2024-05-12 00:01:00 +0800
-selected:       true  # 设置为true才会在Selected Publications中显示
+selected:       false  # 模板条目不在站点中展示
+published:      false
 pub:            "会议/期刊名称"
 pub_date:       "2024"
 abstract: >-
