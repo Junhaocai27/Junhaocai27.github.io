@@ -16,5 +16,6 @@ authors:
   - Xiaopin Zhong
   - Zongze Wu
 links:
+  Paper: https://arxiv.org/abs/2606.20300
   Code: https://github.com/Junhaocai27/CMDS-AD/tree/main
 ---
