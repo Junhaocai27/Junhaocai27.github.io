@@ -1328,23 +1328,12 @@ button:focus:not(:focus-visible) {
   display: inline-flex;
   align-items: center;
   padding-bottom: 0.18rem;
+  background-image: linear-gradient(90deg, #FE667B 0%, #ff8599 55%, #a29bfe 100%);
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% + 0.12rem);
+  background-size: 0 2.5px;
   color: #4d5a70;
-  transition: color 0.28s ease;
-}
-
-.greedy-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.42rem;
-  height: 2.5px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #FE667B 0%, #ff8599 55%, #a29bfe 100%);
-  transform: scaleX(0);
-  transform-origin: center;
-  opacity: 0;
-  transition: transform 0.26s ease, opacity 0.26s ease;
+  transition: color 0.28s ease, background-size 0.26s ease;
 }
 
 .greedy-nav a:hover,
@@ -1359,12 +1348,10 @@ button:focus:not(:focus-visible) {
   border-radius: 0;
   box-shadow: none;
   transform: none;
-}
-
-.greedy-nav li.is-active > a::after,
-.greedy-nav a.is-active::after {
-  transform: scaleX(1);
-  opacity: 1;
+  background-image: linear-gradient(90deg, #FE667B 0%, #ff8599 55%, #a29bfe 100%);
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% + 0.12rem);
+  background-size: 100% 2.5px;
 }
 
 .page__content a:focus-visible {

@@ -94,7 +94,7 @@ body_class: page-home
       <h3>{{ paper.title }}</h3>
       <div class="authors">{{ authors_text }}</div>
       <div class="venue"><span class="accent-text">{{ paper.pub }}</span>, {{ paper.pub_date }}</div>
-      <p>{{ paper.abstract | strip_html | truncatewords: 42 }}</p>
+      <p>{{ paper.abstract }}</p>
       {% if paper.links %}
         <div class="links">
           {% for link in paper.links %}
