@@ -28,7 +28,7 @@
 <meta name="theme-color" content="#ffffff">
 
 <link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/accent-enhancements.css?v=20260619-1' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/accent-enhancements.css?v=20260619-3' | relative_url }}">
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
@@ -234,7 +234,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.querySelectorAll('a[href*="pdf"], a[href*="github"], a[href*="arxiv"]').forEach(function(link) {
-    link.classList.add('link-accent');
+    if (!link.classList.contains('btn-accent')) {
+      link.classList.add('link-accent');
+    }
   });
 
   document.querySelectorAll("[data-theme-toggle]").forEach(function(button) {

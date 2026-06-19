@@ -87,7 +87,6 @@ body_class: page-home
   {% assign cover_path = paper.cover | default: "/assets/images/empty_300x200.svg" %}
   <div class="paper-box floating-card">
     <div class="paper-box-image">
-      <div class="badge">{{ paper.pub_date }}</div>
       <img src="{{ cover_path | relative_url }}" alt="{{ paper.title }} cover" width="100%">
     </div>
     <div class="paper-box-text">

@@ -596,24 +596,6 @@ html:not([data-theme="dark"]) .quote-accent * {
   object-position: center center;
 }
 
-.page-home .paper-box .paper-box-image .badge,
-.page-publications .paper-box .paper-box-image .badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: linear-gradient(135deg, #FE667B 0%, #ff8599 100%);
-  color: white;
-  padding: 0.4em 0.8em;
-  border-radius: 20px;
-  font-size: 0.75em;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(254, 102, 123, 0.25);
-  z-index: 10;
-  text-transform: uppercase;
-  backdrop-filter: blur(10px);
-}
-
 .paper-box-text {
   padding: 2rem;
   flex: 1;
@@ -1021,11 +1003,18 @@ html[data-theme="dark"] ::-moz-selection {
 }
 
 html[data-theme="dark"] .btn-accent,
-html[data-theme="dark"] .paper-box-text .btn-accent,
-html[data-theme="dark"] .paper-box-image .badge {
+html[data-theme="dark"] .paper-box-text .btn-accent {
   background: linear-gradient(135deg, #f5f5f5 0%, #d7d7d7 100%);
   color: #111111 !important;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="dark"] .paper-box-text .btn-accent,
+html[data-theme="dark"] .paper-box-text .btn-accent:visited,
+html[data-theme="dark"] .paper-box-text .btn-accent:hover,
+html[data-theme="dark"] .paper-box-text .btn-accent:focus-visible {
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
 }
 
 html[data-theme="dark"] .btn-accent .fas,
@@ -1033,6 +1022,14 @@ html[data-theme="dark"] .btn-accent .fab,
 html[data-theme="dark"] .paper-box-text .btn-accent .fas,
 html[data-theme="dark"] .paper-box-text .btn-accent .fab {
   color: #111111 !important;
+}
+
+html[data-theme="dark"] .paper-box-text .btn-accent i,
+html[data-theme="dark"] .paper-box-text .btn-accent .fas,
+html[data-theme="dark"] .paper-box-text .btn-accent .fab,
+html[data-theme="dark"] .paper-box-text .btn-accent .far {
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
 }
 
 html[data-theme="dark"] .sidebar .fa,
@@ -1564,6 +1561,7 @@ html[data-theme="dark"] .sidebar .author__urls_sm a:hover .far {
   .page-publications .paper-box .paper-box-image {
     padding: 14px;
   }
+
 }
 
 @media (min-width: 925px) {
