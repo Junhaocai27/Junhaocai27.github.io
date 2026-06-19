@@ -32,7 +32,7 @@ body_class: page-home
 
 <span class="anchor" id="news"></span>
 
-# <i class="fas fa-fire"></i> 最新动态
+<h2 class="home-section-title"><i class="fas fa-fire"></i> 最新动态</h2>
 <ul class="about-section-list">
   {% for item in all_news %}
     <li><em>{{ item.date | date: "%Y.%m" }}</em>: {{ item.title_zh | default: item.title }}</li>
@@ -41,7 +41,7 @@ body_class: page-home
 
 <span class="anchor" id="education"></span>
 
-# <i class="fas fa-graduation-cap"></i> 教育经历
+<h2 class="home-section-title"><i class="fas fa-graduation-cap"></i> 教育经历</h2>
 <ul class="about-section-list education-list">
   {% for school in profile.education %}
     <li class="education-item education-item-with-logo">
@@ -63,7 +63,7 @@ body_class: page-home
 
 <span class="anchor" id="service"></span>
 
-# <i class="fas fa-users"></i> 学术服务
+<h2 class="home-section-title"><i class="fas fa-users"></i> 学术服务</h2>
 <ul class="about-section-list">
   {% for item in profile.service %}
     <li>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' }}</li>
@@ -72,7 +72,7 @@ body_class: page-home
 
 <span class="anchor" id="awards"></span>
 
-# <i class="fas fa-award"></i> 荣誉奖励
+<h2 class="home-section-title"><i class="fas fa-award"></i> 荣誉奖励</h2>
 <ul class="about-section-list">
   {% for item in profile.awards %}
     <li><em>{{ item.date }}</em>: {{ item.name }}</li>
@@ -81,7 +81,7 @@ body_class: page-home
 
 <span class="anchor" id="publications"></span>
 
-# <i class="fas fa-file-alt"></i> 代表性论文
+<h2 class="home-section-title"><i class="fas fa-file-alt"></i> 代表性论文</h2>
 
 {% for paper in selected_pubs %}
   {% assign authors_text = paper.authors | join: ", " | replace: "Junhao Cai*", "<strong>Junhao Cai*</strong>" | replace: "Junhao Cai", "<strong>Junhao Cai</strong>" %}

@@ -541,7 +541,7 @@ html:not([data-theme="dark"]) .quote-accent * {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 12px;
+  padding: 14px 14px 14px 20px;
   box-sizing: border-box;
   border-right: 1px solid rgba(1, 47, 99, 0.05);
   align-self: center;
@@ -935,6 +935,16 @@ html[data-theme="dark"] .highlight-block li {
   color: #e8edf6 !important;
 }
 
+html[data-theme="dark"] .home-section-title {
+  color: #f7f9fc !important;
+}
+
+html[data-theme="dark"] .home-section-title .fas,
+html[data-theme="dark"] .home-section-title .fab,
+html[data-theme="dark"] .home-section-title .far {
+  color: #ffb7c5 !important;
+}
+
 html[data-theme="dark"] .paper-box-text .authors strong {
   color: #ffb7c5 !important;
 }
@@ -984,6 +994,30 @@ html[data-theme="dark"] .highlight-block a.accent-text:focus {
   -webkit-text-fill-color: #ffe0e7 !important;
   background-clip: border-box;
   color: #ffe0e7 !important;
+}
+
+::selection {
+  background: rgba(254, 102, 123, 0.22);
+  color: #012F63;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: rgba(254, 102, 123, 0.22);
+  color: #012F63;
+  text-shadow: none;
+}
+
+html[data-theme="dark"] ::selection {
+  background: rgba(255, 154, 174, 0.42);
+  color: #fff8fa;
+  text-shadow: none;
+}
+
+html[data-theme="dark"] ::-moz-selection {
+  background: rgba(255, 154, 174, 0.42);
+  color: #fff8fa;
+  text-shadow: none;
 }
 
 html[data-theme="dark"] .btn-accent,
@@ -1040,6 +1074,29 @@ html[data-theme="dark"] .author__urls_sm .far {
 .about-section-list {
   margin: 0 0 1.5rem 1.25rem;
   padding-left: 0.35rem;
+}
+
+.home-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 2.35rem 0 1rem;
+  font-size: clamp(1.35rem, 1.1rem + 0.85vw, 1.8rem);
+  font-weight: 760;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #012F63;
+}
+
+.home-section-title .fas,
+.home-section-title .fab,
+.home-section-title .far {
+  color: #FE667B;
+  font-size: 0.92em;
+}
+
+.home-section-title:first-of-type {
+  margin-top: 1.5rem;
 }
 
 .about-section-list li {
@@ -1285,7 +1342,7 @@ button.masthead__control {
 .page-home .paper-box .paper-box-image,
 .page-publications .paper-box .paper-box-image {
   border-radius: 24px;
-  padding: 0;
+  padding: 14px 14px 14px 20px;
 }
 
 .page-home .paper-box .paper-box-image img,
@@ -1496,6 +1553,16 @@ html[data-theme="dark"] .sidebar .author__urls_sm a:hover .far {
 
   .author__signature-image {
     max-width: 8.8rem;
+  }
+
+  .home-section-title {
+    margin: 2rem 0 0.9rem;
+    gap: 0.6rem;
+  }
+
+  .page-home .paper-box .paper-box-image,
+  .page-publications .paper-box .paper-box-image {
+    padding: 14px;
   }
 }
 
