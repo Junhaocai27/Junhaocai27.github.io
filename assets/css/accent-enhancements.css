@@ -1371,8 +1371,11 @@ html[data-theme="dark"] button.masthead__control {
 html[data-theme="dark"] .greedy-nav li.is-active > a,
 html[data-theme="dark"] .greedy-nav a.is-active {
   color: #f5f5f5 !important;
-  background: transparent;
   box-shadow: none;
+  background-image: linear-gradient(90deg, #FE667B 0%, #ff8599 55%, #a29bfe 100%);
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% + 0.12rem);
+  background-size: 100% 2.5px;
 }
 
 html[data-theme="dark"] .greedy-nav a {
