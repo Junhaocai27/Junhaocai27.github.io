@@ -1323,13 +1323,48 @@ button:focus:not(:focus-visible) {
   box-shadow: 0 0 0 4px rgba(254, 102, 123, 0.14);
 }
 
+.greedy-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.18rem;
+  color: #4d5a70;
+  transition: color 0.28s ease;
+}
+
+.greedy-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.42rem;
+  height: 2.5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #FE667B 0%, #ff8599 55%, #a29bfe 100%);
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.26s ease, opacity 0.26s ease;
+}
+
+.greedy-nav a:hover,
+.greedy-nav a:focus {
+  color: #012F63;
+}
+
 .greedy-nav li.is-active > a,
 .greedy-nav a.is-active {
   color: #012F63 !important;
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(1, 47, 99, 0.08), 0 0 0 4px rgba(254, 102, 123, 0.1);
-  transform: translateY(-1px);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+}
+
+.greedy-nav li.is-active > a::after,
+.greedy-nav a.is-active::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .page__content a:focus-visible {
@@ -1349,8 +1384,17 @@ html[data-theme="dark"] button.masthead__control {
 html[data-theme="dark"] .greedy-nav li.is-active > a,
 html[data-theme="dark"] .greedy-nav a.is-active {
   color: #f5f5f5 !important;
-  background: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22), 0 0 0 4px rgba(254, 102, 123, 0.14);
+  background: transparent;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .greedy-nav a {
+  color: rgba(245, 245, 245, 0.76);
+}
+
+html[data-theme="dark"] .greedy-nav a:hover,
+html[data-theme="dark"] .greedy-nav a:focus {
+  color: #f5f5f5;
 }
 
 html[data-theme="dark"] .masthead__control:hover,
@@ -1462,5 +1506,22 @@ html[data-theme="dark"] .sidebar .author__urls_sm a:hover .far {
 
   .author__signature-image {
     max-width: 8.8rem;
+  }
+}
+
+@media (min-width: 925px) {
+  body.page-home #main > .sidebar {
+    width: 240px;
+    margin-right: 28px;
+  }
+
+  body.page-home #main > .page {
+    width: calc(100% - 268px);
+  }
+
+  body.page-home .author__avatar {
+    width: 220px;
+    flex-basis: 220px;
+    border-radius: 22px;
   }
 }
