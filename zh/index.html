@@ -91,6 +91,9 @@ body_class: page-home
       <img src="{{ cover_path | relative_url }}" alt="{{ paper.title }} cover" width="100%">
     </div>
     <div class="paper-box-text">
+      <div class="paper-meta">
+        <span class="paper-year-badge">{{ paper.pub_date }}</span>
+      </div>
       <h3>{{ paper.title }}</h3>
       <div class="authors">{{ authors_text }}</div>
       <div class="venue"><span class="accent-text">{{ paper.pub }}</span>, {{ paper.pub_date }}</div>

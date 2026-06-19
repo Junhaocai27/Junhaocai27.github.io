@@ -605,6 +605,27 @@ html:not([data-theme="dark"]) .quote-accent * {
   position: relative;
 }
 
+.paper-box-text .paper-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.paper-box-text .paper-year-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.38rem 0.82rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FE667B 0%, #ff8599 100%);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  box-shadow: 0 6px 14px rgba(254, 102, 123, 0.22);
+}
+
 .paper-box-text h3 {
   margin: 0 0 1rem 0;
   font-size: 1.25rem;
@@ -679,6 +700,10 @@ html:not([data-theme="dark"]) .quote-accent * {
   
   .paper-box-text {
     padding: 1.5rem;
+  }
+
+  .paper-box-text .paper-meta {
+    margin-bottom: 0.65rem;
   }
   
   .paper-box-text h3 {
@@ -929,6 +954,12 @@ html[data-theme="dark"] .home-section-title .far {
 
 html[data-theme="dark"] .paper-box-text .authors strong {
   color: #ffb7c5 !important;
+}
+
+html[data-theme="dark"] .paper-box-text .paper-year-badge {
+  background: linear-gradient(135deg, #ffd7df 0%, #ffb8c5 100%);
+  color: #111111;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
 html[data-theme="dark"] .education-list .education-item-with-logo::before,
