@@ -654,6 +654,32 @@ html:not([data-theme="dark"]) .quote-accent * {
   font-weight: 700;
 }
 
+.author-footnotes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+  margin-left: 0.45rem;
+  padding: 0.16rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid rgba(1, 47, 99, 0.12);
+  background: linear-gradient(135deg, rgba(1, 47, 99, 0.08) 0%, rgba(254, 102, 123, 0.12) 100%);
+  color: #38506f;
+  font-size: 0.79rem;
+  line-height: 1.35;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.author-footnotes i {
+  color: inherit;
+  font-style: italic;
+}
+
+.author-footnotes sup {
+  color: #012F63;
+  font-weight: 700;
+}
+
 .paper-box-text .venue {
   color: #6c757d;
   font-style: italic;
@@ -954,6 +980,16 @@ html[data-theme="dark"] .home-section-title .far {
 
 html[data-theme="dark"] .paper-box-text .authors strong {
   color: #ffb7c5 !important;
+}
+
+html[data-theme="dark"] .author-footnotes {
+  border-color: rgba(255, 183, 197, 0.22);
+  background: linear-gradient(135deg, rgba(255, 183, 197, 0.14) 0%, rgba(120, 176, 255, 0.16) 100%);
+  color: #e6edf9;
+}
+
+html[data-theme="dark"] .author-footnotes sup {
+  color: #ffd7df;
 }
 
 html[data-theme="dark"] .paper-box-text .paper-year-badge {

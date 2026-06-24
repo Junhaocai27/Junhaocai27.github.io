@@ -53,7 +53,7 @@
 {%- endfor -%}
 
 {%- if has_eq_contrib or has_corresponding %}
-<mark>(
+<span class="author-footnotes">(
     {%- if has_eq_contrib -%}
         * <i>{% if is_zh %}共同一作{% else %}equal contribution{% endif %}</i>
     {%- endif -%}
@@ -61,5 +61,5 @@
         {%- if has_eq_contrib -%}, {% endif -%}
         <sup>#</sup> <i>{% if is_zh %}通讯作者{% else %}corresponding author{% endif %}</i>
     {%- endif -%}
-)</mark>
+)</span>
 {%- endif -%}

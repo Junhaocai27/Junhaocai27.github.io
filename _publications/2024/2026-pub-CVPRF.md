@@ -10,7 +10,10 @@ cover:          /assets/images/covers/cover_cvprf.png  # Optional cover image
 authors:
   - Junhao Cai*
   - Deyu Zeng*
-  - Junhao Pang, Lini Li, Zongze Wu, Xiaopin Zhong
+  - Junhao Pang
+  - Lini Li
+  - Zongze Wu
+  - Xiaopin Zhong#
 links:
   Paper: http://arxiv.org/abs/2603.09266
   Code: https://github.com/Junhaocai27/ForgeDreamer  # Optional
