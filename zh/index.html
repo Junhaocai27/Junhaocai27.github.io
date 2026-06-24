@@ -84,7 +84,6 @@ body_class: page-home
 <h2 class="home-section-title"><i class="fas fa-file-alt"></i> 代表性论文</h2>
 
 {% for paper in selected_pubs %}
-  {% assign authors_text = paper.authors | join: ", " | replace: "Junhao Cai*", "<strong>Junhao Cai*</strong>" | replace: "Junhao Cai", "<strong>Junhao Cai</strong>" %}
   {% assign cover_path = paper.cover | default: "/assets/images/empty_300x200.svg" %}
   <div class="paper-box floating-card">
     <div class="paper-box-image">
@@ -95,7 +94,7 @@ body_class: page-home
         <span class="paper-year-badge">{{ paper.pub_date }}</span>
       </div>
       <h3>{{ paper.title }}</h3>
-      <div class="authors">{{ authors_text }}</div>
+      <div class="authors">{% include widgets/author_list.html authors=paper.authors %}</div>
       <div class="venue"><span class="accent-text">{{ paper.pub }}</span>, {{ paper.pub_date }}</div>
       <p>{{ paper.abstract }}</p>
       {% if paper.links %}

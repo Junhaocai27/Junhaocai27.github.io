@@ -1,4 +1,9 @@
 {%- assign authors = include.authors -%}
+{%- assign lang = include.lang | default: page.lang | default: "en" -%}
+{%- assign is_zh = false -%}
+{%- if lang == "zh" -%}
+    {%- assign is_zh = true -%}
+{%- endif -%}
 {%- assign has_eq_contrib = false -%}
 {%- assign has_corresponding = false -%}
 
@@ -50,11 +55,11 @@
 {%- if has_eq_contrib or has_corresponding %}
 <mark>(
     {%- if has_eq_contrib -%}
-        * <i> equal contribution</i>
+        * <i>{% if is_zh %}共同一作{% else %}equal contribution{% endif %}</i>
     {%- endif -%}
     {%- if has_corresponding -%}
         {%- if has_eq_contrib -%}, {% endif -%}
-        <sup>#</sup> <i> corresponding author</i>
+        <sup>#</sup> <i>{% if is_zh %}通讯作者{% else %}corresponding author{% endif %}</i>
     {%- endif -%}
 )</mark>
 {%- endif -%}

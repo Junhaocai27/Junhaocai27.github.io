@@ -18,7 +18,6 @@ body_class: page-publications
 {% for year in pubs_by_year %}
   <h2>{{ year.name }}</h2>
   {% for paper in year.items %}
-    {% assign authors_text = paper.authors | join: ", " | replace: "Junhao Cai*", "<strong>Junhao Cai*</strong>" | replace: "Junhao Cai", "<strong>Junhao Cai</strong>" %}
     {% assign cover_path = paper.cover | default: "/assets/images/empty_300x200.svg" %}
     <div class="paper-box floating-card">
       <div class="paper-box-image">
@@ -29,7 +28,7 @@ body_class: page-publications
           <span class="paper-year-badge">{{ paper.pub_date }}</span>
         </div>
         <h3>{{ paper.title }}</h3>
-        <div class="authors">{{ authors_text }}</div>
+        <div class="authors">{% include widgets/author_list.html authors=paper.authors %}</div>
         <div class="venue"><span class="accent-text">{{ paper.pub }}</span>, {{ paper.pub_date }}</div>
         <p>{{ paper.abstract }}</p>
         {% if paper.links %}

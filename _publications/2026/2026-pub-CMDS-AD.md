@@ -10,7 +10,7 @@ cover:          /assets/images/covers/cover_eccv_cmds_ad.png
 authors:
   - Junhao Cai
   - Junyu Chen
-  - Deyu Zeng
+  - Deyu Zeng#
   - Junhao Pang
   - Qiwei Liang
   - Xiaopin Zhong
