@@ -15,12 +15,12 @@ body_class: page-home
 
 {{ profile.short_bio }}
 
-<div class="quote-accent">
+<div class="quote-accent research-tagline">
   {{ profile.tagline }}
 </div>
 
 <div class="highlight-blocks">
-  <div class="highlight-block floating-card">
+  <div class="highlight-block floating-card research-panel">
     <h3><i class="fas fa-flask"></i> 研究方向</h3>
     <ul>
       {% for interest in profile.research_interests %}
@@ -33,9 +33,9 @@ body_class: page-home
 <span class="anchor" id="news"></span>
 
 <h2 class="home-section-title"><i class="fas fa-fire"></i> 最新动态</h2>
-<ul class="about-section-list">
+<ul class="about-section-list news-timeline">
   {% for item in all_news %}
-    <li><em>{{ item.date | date: "%Y.%m" }}</em>: {{ item.title_zh | default: item.title }}</li>
+    <li><em>{{ item.date | date: "%Y.%m" }}</em><span class="news-timeline-content">{{ item.title_zh | default: item.title }}</span></li>
   {% endfor %}
 </ul>
 
