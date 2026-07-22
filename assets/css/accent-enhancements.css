@@ -1647,3 +1647,79 @@ html[data-theme="dark"] .sidebar .author__urls_sm a:hover .far {
     border-radius: 22px;
   }
 }
+
+/* Keep wide research pipelines at their native proportions so fine details remain legible. */
+.page-home .paper-box,
+.page-publications .paper-box {
+  align-items: center;
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+  padding: clamp(0.9rem, 1.8vw, 1.35rem);
+}
+
+.page-home .paper-box .paper-box-image,
+.page-publications .paper-box .paper-box-image {
+  width: clamp(320px, 42%, 480px);
+  min-width: clamp(320px, 42%, 480px);
+  max-width: clamp(320px, 42%, 480px);
+  aspect-ratio: auto;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 14px;
+}
+
+.page-home .paper-box .paper-box-image::before,
+.page-publications .paper-box .paper-box-image::before {
+  display: none;
+}
+
+.page-home .paper-box .paper-box-image img,
+.page-home .paper-box .paper-box-image video,
+.page-publications .paper-box .paper-box-image img,
+.page-publications .paper-box .paper-box-image video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain !important;
+  border: 1px solid rgba(1, 47, 99, 0.1);
+  border-radius: 12px !important;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(1, 47, 99, 0.08);
+}
+
+.page-home .paper-box .paper-box-text,
+.page-publications .paper-box .paper-box-text {
+  padding: 0.35rem 0.25rem 0.35rem 0;
+}
+
+html[data-theme="dark"] .page-home .paper-box .paper-box-image img,
+html[data-theme="dark"] .page-home .paper-box .paper-box-image video,
+html[data-theme="dark"] .page-publications .paper-box .paper-box-image img,
+html[data-theme="dark"] .page-publications .paper-box .paper-box-image video {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 768px) {
+  .page-home .paper-box,
+  .page-publications .paper-box {
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+
+  .page-home .paper-box .paper-box-image,
+  .page-publications .paper-box .paper-box-image {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    align-self: stretch;
+  }
+
+  .page-home .paper-box .paper-box-text,
+  .page-publications .paper-box .paper-box-text {
+    padding: 0.25rem 0.45rem 0.55rem;
+  }
+}

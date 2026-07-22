@@ -96,7 +96,6 @@ body_class: page-home
       <h3>{{ paper.title }}</h3>
       <div class="authors">{% include widgets/author_list.html authors=paper.authors %}</div>
       <div class="venue"><span class="accent-text">{{ paper.pub }}</span>, {{ paper.pub_date }}</div>
-      <p>{{ paper.abstract }}</p>
       {% if paper.links %}
         <div class="links">
           {% for link in paper.links %}
