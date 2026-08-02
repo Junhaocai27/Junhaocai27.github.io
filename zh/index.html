@@ -13,10 +13,13 @@ body_class: page-home
 
 <span class="anchor" id="about-me"></span>
 
-{{ profile.short_bio }}
+<div class="profile-intro">
+  {{ profile.short_bio }}
+</div>
 
 <div class="quote-accent research-tagline">
-  {{ profile.tagline }}
+  <span class="research-tagline-label">研究重点</span>
+  <span>{{ profile.tagline }}</span>
 </div>
 
 <div class="highlight-blocks">
@@ -64,7 +67,7 @@ body_class: page-home
 <span class="anchor" id="service"></span>
 
 <h2 class="home-section-title"><i class="fas fa-users"></i> 学术服务</h2>
-<ul class="about-section-list">
+<ul class="about-section-list service-list">
   {% for item in profile.service %}
     <li>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' }}</li>
   {% endfor %}
@@ -73,7 +76,7 @@ body_class: page-home
 <span class="anchor" id="awards"></span>
 
 <h2 class="home-section-title"><i class="fas fa-award"></i> 荣誉奖励</h2>
-<ul class="about-section-list">
+<ul class="about-section-list awards-list">
   {% for item in profile.awards %}
     <li><em>{{ item.date }}</em>: {{ item.name }}</li>
   {% endfor %}

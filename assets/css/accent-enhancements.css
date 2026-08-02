@@ -1528,21 +1528,6 @@ html[data-theme="dark"] .author__urls_sm .far {
    Final Polish: restore blue-pink theme while keeping the useful fixes
    ========================================================================== */
 
-.author__signature {
-  margin-top: 0.7rem;
-}
-
-.author__signature-image {
-  display: block;
-  width: 100%;
-  max-width: min(11rem, 100%);
-  height: auto;
-  opacity: 0.92;
-  filter: grayscale(1) contrast(1.06);
-  transform: rotate(-3deg);
-  transform-origin: left center;
-}
-
 .sidebar .author__urls li,
 .sidebar .author__urls a,
 .sidebar .author__urls_sm a {
@@ -1808,10 +1793,6 @@ html[data-theme="dark"] .sidebar .author__urls_sm a:hover .far {
 
   .sidebar .author__name {
     font-size: clamp(1.05rem, 4.2vw, 1.28rem);
-  }
-
-  .author__signature-image {
-    max-width: 8.8rem;
   }
 
   .home-section-title {

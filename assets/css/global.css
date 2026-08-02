@@ -396,14 +396,6 @@ body.lang-zh .hero-title {
     line-height: 1.14;
 }
 
-.hero-handwriting {
-    height: 3.5rem;
-    margin-left: 0.6rem;
-    vertical-align: middle;
-    filter: grayscale(1);
-    opacity: 0.92;
-}
-
 .hero-tagline {
     max-width: 42rem;
     margin-bottom: 1.15rem;
@@ -1121,11 +1113,6 @@ div.lazy {
     .hero-title {
         margin-top: 1rem;
         font-size: 2.35rem;
-    }
-
-    .hero-handwriting {
-        height: 2.7rem;
-        margin-left: 0.3rem;
     }
 
     .hero-tagline {

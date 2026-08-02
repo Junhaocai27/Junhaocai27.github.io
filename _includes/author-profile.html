@@ -40,15 +40,6 @@
     {% if author_bio %}
       <p class="author__bio">{{ author_bio }}</p>
     {% endif %}
-    {% if profile.handwriting_image %}
-      <div class="author__signature" aria-hidden="true">
-        <img
-          src="{{ profile.handwriting_image | relative_url }}"
-          alt="{% if lang == 'zh' %}蔡俊豪手写签名{% else %}Junhao Cai handwritten signature{% endif %}"
-          class="author__signature-image"
-          loading="lazy">
-      </div>
-    {% endif %}
   </div>
 
   <div class="author__urls-wrapper">

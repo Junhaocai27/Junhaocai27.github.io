@@ -16,9 +16,6 @@
                         <div class="hero-eyebrow">{{ locale.profile.hero_label }}</div>
                         <h1 class="hero-title font-weight-normal">
                             <span class="primary-name">{{ profile.primary_name }}</span>
-                            {% if profile.handwriting_image %}
-                            <img src="{{ profile.handwriting_image | relative_url }}" alt="Handwriting" class="hero-handwriting">
-                            {% endif %}
                             {% if profile.secondary_name != blank %}
                             <small>{{ profile.secondary_name }}</small>
                             {% endif %}

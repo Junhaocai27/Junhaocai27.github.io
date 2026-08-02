@@ -1,7 +1,6 @@
 primary_name: "Junhao Cai"
 secondary_name: ""
 navbar_name: "Junhao Cai's Home Page"
-handwriting_image: /assets/images/etc/handwriting.png  # 手写图片路径
 
 positions:
 - logo: /assets/images/badges/SZU_logo.png  # Logo is optional
