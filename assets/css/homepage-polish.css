@@ -479,7 +479,7 @@ body.page-home .highlight-blocks {
 
 body.page-home .research-panel {
   margin: 0;
-  padding: 1.05rem 0 1.25rem;
+  padding: 1.05rem 1rem 1.25rem;
   border-top: 1px solid var(--hp-line);
   border-bottom: 1px solid var(--hp-line);
   border-radius: 0;
@@ -1240,4 +1240,15 @@ html[data-theme="dark"] body.page-publications .paper-box-text .btn-accent:focus
 html[data-theme="dark"] body.page-publications .paper-box-text .btn-accent:focus-visible .fab {
   color: #25151b !important;
   -webkit-text-fill-color: #25151b !important;
+}
+
+@media (min-width: 925px) {
+  body.page-home .author__avatar,
+  body.page-publications .author__avatar {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    flex: 0 0 auto;
+    margin: 0 0 1.15rem;
+  }
 }
