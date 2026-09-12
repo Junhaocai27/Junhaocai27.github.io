@@ -28,7 +28,7 @@
 <meta name="theme-color" content="#ffffff">
 
 <link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/accent-enhancements.css?v=20260619-3' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/accent-enhancements.css?v=20260912-1' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/homepage-polish.css?v=20260803-2' | relative_url }}">
 
 <script type="text/x-mathjax-config">
@@ -84,6 +84,58 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (error) {}
     updateThemeControls(theme);
     updateThemeColor(theme);
+  }
+
+  function initCollapsibleSections() {
+    document.querySelectorAll("[data-collapsible-toggle]").forEach(function(button) {
+      var list = document.getElementById(button.getAttribute("aria-controls"));
+      var label = button.querySelector(".section-toggle-label");
+      var items = list ? Array.from(list.querySelectorAll(".collapsible-item")) : [];
+      var collapseTimer = null;
+
+      if (!list || !label || !items.length) {
+        button.hidden = true;
+        return;
+      }
+
+      items.forEach(function(item, index) {
+        item.style.setProperty("--collapse-index", index);
+      });
+
+      button.addEventListener("click", function() {
+        var nextExpanded = button.getAttribute("aria-expanded") !== "true";
+
+        if (collapseTimer !== null) {
+          window.clearTimeout(collapseTimer);
+          collapseTimer = null;
+        }
+
+        button.setAttribute("aria-expanded", nextExpanded ? "true" : "false");
+        button.classList.toggle("is-expanded", nextExpanded);
+        list.classList.toggle("is-expanded", nextExpanded);
+        label.textContent = nextExpanded ? button.dataset.collapseLabel : button.dataset.expandLabel;
+
+        items.forEach(function(item) {
+          if (nextExpanded) {
+            item.hidden = false;
+            window.requestAnimationFrame(function() {
+              item.classList.add("is-visible");
+            });
+          } else {
+            item.classList.remove("is-visible");
+          }
+        });
+
+        if (!nextExpanded) {
+          collapseTimer = window.setTimeout(function() {
+            items.forEach(function(item) {
+              item.hidden = true;
+            });
+            collapseTimer = null;
+          }, 240);
+        }
+      });
+    });
   }
 
   function initSectionSpy() {
@@ -255,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  initCollapsibleSections();
   initSectionSpy();
   updateThemeControls(getCurrentTheme());
   updateThemeColor(getCurrentTheme());

@@ -8,12 +8,18 @@ body_class: page-home
 ---
 {% assign profile = site.data.profile %}
 {% assign all_news = site.news | sort: "date" | reverse %}
+{% assign sorted_awards = profile.awards | sort: "date" | reverse %}
 {% assign selected_pubs = site.publications | where_exp: "item", "item.published != false" | sort: "date" | reverse | where: "selected", true %}
 
 <span class="anchor" id="about-me"></span>
 
 <div class="profile-intro">
   {{ profile.short_bio }}
+</div>
+
+<div class="phd-opportunity-callout" role="note">
+  <span class="phd-opportunity-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+  <p>I am actively seeking Ph.D. opportunities in computer vision, multimodal learning, and generative AI.</p>
 </div>
 
 <div class="quote-accent research-tagline">
@@ -35,11 +41,20 @@ body_class: page-home
 <span class="anchor" id="news"></span>
 
 <h2 class="home-section-title"><i class="fas fa-fire"></i> News</h2>
-<ul class="about-section-list news-timeline">
+<ul class="about-section-list news-timeline collapsible-section-list" id="news-list">
   {% for item in all_news %}
-    <li><em>{{ item.date | date: "%Y.%m" }}</em><span class="news-timeline-content">{{ item.title }}</span></li>
+    <li{% if forloop.index > 3 %} class="collapsible-item" hidden{% endif %}><em>{{ item.date | date: "%Y.%m" }}</em><span class="news-timeline-content">{{ item.title }}</span></li>
   {% endfor %}
 </ul>
+{% assign hidden_news_count = all_news.size | minus: 3 %}
+{% if hidden_news_count > 0 %}
+  <div class="section-toggle-wrap">
+    <button type="button" class="section-toggle" data-collapsible-toggle aria-controls="news-list" aria-expanded="false" data-expand-label="Show {{ hidden_news_count }} more" data-collapse-label="Show less">
+      <span class="section-toggle-label">Show {{ hidden_news_count }} more</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </button>
+  </div>
+{% endif %}
 
 <span class="anchor" id="education"></span>
 
@@ -75,11 +90,20 @@ body_class: page-home
 <span class="anchor" id="awards"></span>
 
 <h2 class="home-section-title"><i class="fas fa-award"></i> Honors and Awards</h2>
-<ul class="about-section-list awards-list">
-  {% for item in profile.awards %}
-    <li><em>{{ item.date }}</em>: {{ item.name }}</li>
+<ul class="about-section-list awards-list collapsible-section-list" id="awards-list">
+  {% for item in sorted_awards %}
+    <li{% if forloop.index > 3 %} class="collapsible-item" hidden{% endif %}><em>{{ item.date }}</em>: {{ item.name }}</li>
   {% endfor %}
 </ul>
+{% assign hidden_awards_count = sorted_awards.size | minus: 3 %}
+{% if hidden_awards_count > 0 %}
+  <div class="section-toggle-wrap">
+    <button type="button" class="section-toggle" data-collapsible-toggle aria-controls="awards-list" aria-expanded="false" data-expand-label="Show {{ hidden_awards_count }} more" data-collapse-label="Show less">
+      <span class="section-toggle-label">Show {{ hidden_awards_count }} more</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </button>
+  </div>
+{% endif %}
 
 <span class="anchor" id="publications"></span>
 
