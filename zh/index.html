@@ -20,12 +20,7 @@ body_class: page-home
 
 <div class="phd-opportunity-callout" role="note">
   <span class="phd-opportunity-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
-  <p>我目前正在积极寻找计算机视觉、多模态学习与生成式 AI 方向的博士机会。</p>
-</div>
-
-<div class="quote-accent research-tagline">
-  <span class="research-tagline-label">研究重点</span>
-  <span>{{ profile.tagline }}</span>
+  <p>我目前正在积极寻找计算机视觉、多模态学习、生成式 AI 与具身智能方向的博士机会。</p>
 </div>
 
 <div class="highlight-blocks">
@@ -82,11 +77,20 @@ body_class: page-home
 <span class="anchor" id="service"></span>
 
 <h2 class="home-section-title"><i class="fas fa-users"></i> 学术服务</h2>
-<ul class="about-section-list service-list">
+<ul class="about-section-list service-list collapsible-section-list" id="service-list">
   {% for item in profile.service %}
-    <li>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+    <li{% if forloop.index > 3 %} class="collapsible-item" hidden{% endif %}>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' }}</li>
   {% endfor %}
 </ul>
+{% assign hidden_service_count = profile.service.size | minus: 3 %}
+{% if hidden_service_count > 0 %}
+  <div class="section-toggle-wrap">
+    <button type="button" class="section-toggle" data-collapsible-toggle aria-controls="service-list" aria-expanded="false" data-expand-label="展开其余 {{ hidden_service_count }} 项" data-collapse-label="收起">
+      <span class="section-toggle-label">展开其余 {{ hidden_service_count }} 项</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </button>
+  </div>
+{% endif %}
 
 <span class="anchor" id="awards"></span>
 

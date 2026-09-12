@@ -14,11 +14,11 @@ wechat_prompt: >-
   添加微信时请备注您的<strong>姓名</strong>和<strong>当前或曾经所在单位</strong>，谢谢！
 
 short_bio_text_justify: true
-tagline: "聚焦文生 3D、多模态学习与高效微调的生成式 AI 研究。"
 research_interests:
 - 文生 3D 生成
 - 扩散模型
 - 多模态学习
+- 具身智能
 - 超图神经网络
 - LoRA 微调
 short_bio: >-

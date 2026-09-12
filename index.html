@@ -19,12 +19,7 @@ body_class: page-home
 
 <div class="phd-opportunity-callout" role="note">
   <span class="phd-opportunity-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
-  <p>I am actively seeking Ph.D. opportunities in computer vision, multimodal learning, and generative AI.</p>
-</div>
-
-<div class="quote-accent research-tagline">
-  <span class="research-tagline-label">Research focus</span>
-  <span>{{ profile.tagline }}</span>
+  <p>I am actively seeking Ph.D. opportunities in computer vision, multimodal learning, generative AI, and embodied intelligence.</p>
 </div>
 
 <div class="highlight-blocks">
@@ -81,11 +76,20 @@ body_class: page-home
 <span class="anchor" id="service"></span>
 
 <h2 class="home-section-title"><i class="fas fa-users"></i> Academic Service</h2>
-<ul class="about-section-list service-list">
+<ul class="about-section-list service-list collapsible-section-list" id="service-list">
   {% for item in profile.service %}
-    <li>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+    <li{% if forloop.index > 3 %} class="collapsible-item" hidden{% endif %}>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' }}</li>
   {% endfor %}
 </ul>
+{% assign hidden_service_count = profile.service.size | minus: 3 %}
+{% if hidden_service_count > 0 %}
+  <div class="section-toggle-wrap">
+    <button type="button" class="section-toggle" data-collapsible-toggle aria-controls="service-list" aria-expanded="false" data-expand-label="Show {{ hidden_service_count }} more" data-collapse-label="Show less">
+      <span class="section-toggle-label">Show {{ hidden_service_count }} more</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </button>
+  </div>
+{% endif %}
 
 <span class="anchor" id="awards"></span>
 
