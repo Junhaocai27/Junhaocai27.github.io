@@ -16,7 +16,7 @@ authors:
   - Dong Zhang
   - Shaoyi Du
 links:
-  # Paper: https://paper-link
+  Paper: https://www.ijcai.org/proceedings/2026/401
   # Code: https://code-link  # Optional
   # Project: https://project-link  # Optional
 ---

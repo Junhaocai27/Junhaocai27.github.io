@@ -16,7 +16,12 @@
             {% endif %}
         {% endif %}
 
-        {% if link_label_lower contains "paper" or link_label_lower contains "pdf" or link_label_lower contains "arxiv" %}
+        {% assign link_url_lower = link_url | downcase %}
+
+        {% if link_label_lower contains "springer" or link_url_lower contains "link.springer.com" %}
+            {% assign icon_class = "ai ai-springer" %}
+            {% assign link_kind = "paper" %}
+        {% elsif link_label_lower contains "paper" or link_label_lower contains "pdf" or link_label_lower contains "arxiv" %}
             {% assign icon_class = "fa-solid fa-file-lines" %}
             {% assign link_kind = "paper" %}
         {% elsif link_label_lower contains "code" or link_label_lower contains "github" or link_label_lower contains "repo" %}

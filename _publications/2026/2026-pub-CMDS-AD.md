@@ -16,7 +16,7 @@ authors:
   - Xiaopin Zhong
   - Zongze Wu
 links:
-  Paper: https://arxiv.org/abs/2606.20300
+  Springer: https://link.springer.com/chapter/10.1007/978-3-032-37016-7_23
   Code: https://github.com/Junhaocai27/CMDS-AD/tree/main
   Project: https://cmds-ad.github.io/
 ---
