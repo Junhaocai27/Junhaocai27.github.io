@@ -1252,3 +1252,161 @@ html[data-theme="dark"] body.page-publications .paper-box-text .btn-accent:focus
     margin: 0 0 1.15rem;
   }
 }
+
+/* Homepage density pass: retain the academic layout while removing excess framing. */
+@media (min-width: 925px) {
+  body.page-home #main {
+    max-width: 1260px;
+    padding-top: 1.7rem;
+    padding-bottom: 3.5rem;
+  }
+
+  body.page-home #main > .sidebar {
+    flex-basis: 268px;
+    width: 268px;
+    margin-right: 1.5rem;
+  }
+}
+
+body.page-home .profile_box {
+  padding: 1rem;
+  border-radius: 14px;
+  background: var(--hp-surface-soft);
+  box-shadow: none;
+}
+
+body.page-home .author__avatar {
+  margin-bottom: 0;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+body.page-home .author__content {
+  padding: 0.9rem 0.15rem 0.7rem;
+  border-bottom: 1px solid var(--hp-line);
+}
+
+body.page-home .author__name {
+  margin-bottom: 0.28rem;
+  font-size: 1.42rem;
+  letter-spacing: 0;
+}
+
+body.page-home .author__bio {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+body.page-home .author__urls-wrapper {
+  margin-top: 0.35rem;
+}
+
+body.page-home .author__urls {
+  gap: 0;
+}
+
+body.page-home .author__urls > li {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+}
+
+body.page-home .author__urls > li + li {
+  border-top: 1px solid var(--hp-line);
+}
+
+body.page-home .author__urls > li > a,
+body.page-home .author__urls > li.author__location {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.1rem;
+  margin: 0;
+  padding: 0.48rem 0.15rem;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--hp-muted) !important;
+  font-size: 0.9rem;
+}
+
+body.page-home .author__urls > li.author__location {
+  color: var(--hp-ink) !important;
+}
+
+body.page-home .author__urls > li > a:hover,
+body.page-home .author__urls > li > a:focus-visible {
+  background: var(--hp-surface-blue);
+  color: var(--hp-blue-deep) !important;
+  transform: none;
+}
+
+body.page-home .highlight-blocks {
+  margin-bottom: 1.35rem;
+}
+
+body.page-home .research-panel {
+  padding: 0.85rem 0.1rem 0.95rem;
+}
+
+body.page-home .home-section-title {
+  margin: 1.9rem 0 0.65rem;
+  padding-bottom: 0.48rem;
+}
+
+body.page-home .home-section-title:first-of-type {
+  margin-top: 0.9rem;
+}
+
+body.page-home .about-section-list {
+  margin-bottom: 1rem;
+}
+
+body.page-home .news-timeline li {
+  padding-top: 0.64rem !important;
+  padding-bottom: 0.64rem !important;
+}
+
+body.page-home .education-list .education-item-with-logo {
+  padding-top: 0.82rem !important;
+  padding-bottom: 0.82rem !important;
+}
+
+body.page-home .service-list li,
+body.page-home .awards-list li {
+  padding-top: 0.62rem !important;
+  padding-bottom: 0.62rem !important;
+}
+
+body.page-home .section-toggle-wrap {
+  margin: -0.55rem 0 0.85rem;
+}
+
+@media (max-width: 924px) {
+  body.page-home .author__content {
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  body.page-home .author__urls-wrapper {
+    margin-top: 0.8rem;
+  }
+
+  body.page-home .author__urls > li + li {
+    border-top: 0;
+  }
+
+  body.page-home .author__urls > li > a,
+  body.page-home .author__urls > li.author__location {
+    min-height: 2rem;
+    padding: 0.42rem 0.15rem;
+    font-size: 0.88rem;
+  }
+}
+
+html[data-theme="dark"] body.page-home .profile_box {
+  background: var(--hp-surface);
+  box-shadow: none !important;
+}

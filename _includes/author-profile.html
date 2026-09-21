@@ -45,7 +45,7 @@
   <div class="author__urls-wrapper">
     <ul class="author__urls social-icons">
       {% if author.location %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
+        <li class="author__location"><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i><span>{{ author.location }}</span></li>
       {% endif %}
       {% if author.employer %}
         <li><i class="fa fa-fw fa-building" aria-hidden="true"></i> {{ author.employer }}</li>
