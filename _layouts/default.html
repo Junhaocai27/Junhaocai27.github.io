@@ -10,6 +10,14 @@ layout: compress
   </head>
 
   <body class="{% if page.body_class %}{{ page.body_class }} {% endif %}{% if page.lang == 'zh' %}lang-zh{% else %}lang-en{% endif %}">
+    {% if page.body_class contains 'page-home' %}<!--
+      THESIS: A researcher homepage built as a quiet, wide reading surface instead of a sidebar template.
+      OWN-WORLD: White space, ruled rows, soft graphite text, and one precise blue signal.
+      STORY: Visitors meet Junhao's work first, then scan current focus, milestones, service, awards, and publications.
+      FIRST VIEWPORT: Fixed navigation above a two-column identity block with portrait, bio, links, and research focus.
+      FORM: Wide researcher profile / row-based archive, inspired by modern academic portfolios without copying source code.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+    -->{% endif %}
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
