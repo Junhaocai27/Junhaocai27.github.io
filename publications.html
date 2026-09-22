@@ -19,7 +19,7 @@ body_class: page-publications
   <h2>{{ year.name }}</h2>
   {% for paper in year.items %}
     {% assign cover_path = paper.cover | default: "/assets/images/empty_300x200.svg" %}
-    <div class="paper-box floating-card">
+    <div class="paper-box publication-archive-row floating-card">
       <div class="paper-box-image">
         <img src="{{ cover_path | relative_url }}" alt="{{ paper.title }} cover" width="100%">
       </div>

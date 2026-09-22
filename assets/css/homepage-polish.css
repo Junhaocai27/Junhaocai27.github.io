@@ -728,6 +728,7 @@ body.page-publications .paper-box {
   box-shadow: none !important;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
+body.page-publications .publication-archive-row { display: grid !important; }
 
 body.page-home .paper-box:hover,
 body.page-publications .paper-box:hover {
@@ -1052,6 +1053,7 @@ body.page-publications .paper-box-text h3 {
     gap: 0.8rem;
     padding: 0.72rem !important;
   }
+  body.page-publications .publication-archive-row { display: grid !important; }
   body.page-publications .paper-box .paper-box-image {
     width: 100% !important;
     min-width: 0 !important;
@@ -1511,5 +1513,7 @@ body.page-publications .paper-box-text h3 { font-size: clamp(1rem, 0.92rem + 0.2
   body.page-publications .paper-box-text .authors,
   body.page-publications .paper-box-text .venue { font-size: 0.76rem; line-height: 1.42; }
   body.page-publications .paper-box-text .links { gap: 0.28rem; margin-top: 0.55rem; }
-  body.page-publications .paper-box-text .btn-accent { min-height: 1.7rem; padding: 0.28rem 0.45rem; font-size: 0.68rem; }
+body.page-publications .paper-box-text .btn-accent { min-height: 1.7rem; padding: 0.28rem 0.45rem; font-size: 0.68rem; }
 }
+
+body.page-publications .publication-archive-row { display: grid !important; }
