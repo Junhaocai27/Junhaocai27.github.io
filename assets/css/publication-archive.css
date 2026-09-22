@@ -1,0 +1,225 @@
+/* Publication archive only. These classes intentionally do not share homepage publication selectors. */
+.archive-main {
+  padding-top: calc(var(--nav-h) + 20px);
+}
+
+.archive-publication-section {
+  min-height: calc(100vh - var(--nav-h));
+  padding: 42px 0 28px;
+}
+
+.archive-publication-heading {
+  margin-bottom: 24px;
+}
+
+.archive-publication-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(30px, 3.2vw, 40px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.archive-publication-group {
+  margin: 0;
+  scroll-margin-top: calc(var(--nav-h) + 20px);
+}
+
+.archive-publication-group + .archive-publication-group {
+  margin-top: 30px;
+}
+
+.archive-publication-group-head {
+  margin: 0 0 4px;
+  padding: 6px 0 12px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.archive-publication-group-head h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.archive-publication-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive-publication-row {
+  display: grid !important;
+  grid-template-areas: 'media content';
+  grid-template-columns: 140px minmax(0, 1fr) !important;
+  column-gap: 16px;
+  align-items: center;
+  min-width: 0;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line-soft);
+  background: transparent;
+}
+
+.archive-publication-media {
+  display: block;
+  grid-area: media;
+  align-self: center;
+  width: 140px;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.archive-publication-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+}
+
+.archive-publication-content {
+  display: block;
+  grid-area: content;
+  min-width: 0;
+}
+
+.archive-publication-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.archive-publication-authors {
+  margin-top: 3px;
+  color: var(--ink-faint);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.archive-publication-authors strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.archive-publication-venue {
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.archive-publication-venue span {
+  color: var(--accent);
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.archive-publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-top: 6px;
+}
+
+.archive-publication-links a {
+  padding: 0 10px 0 0;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ink) 22%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.archive-publication-links a + a {
+  padding-left: 10px;
+  border-left: 1px solid var(--line);
+}
+
+.archive-publication-links a:hover {
+  color: var(--ink);
+  text-decoration-color: var(--ink);
+}
+
+.archive-footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 36px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-faint);
+  font-size: 12px;
+}
+
+@media (max-width: 680px) {
+  .archive-main {
+    padding-top: calc(var(--nav-h) + 12px);
+  }
+
+  .archive-publication-section {
+    padding-top: 28px;
+  }
+
+  .archive-publication-heading {
+    margin-bottom: 18px;
+  }
+
+  .archive-publication-heading h1 {
+    font-size: 26px;
+  }
+
+  .archive-publication-group + .archive-publication-group {
+    margin-top: 24px;
+  }
+
+  .archive-publication-group-head h2 {
+    font-size: 18px;
+  }
+
+  .archive-publication-row {
+    grid-template-columns: 96px minmax(0, 1fr) !important;
+    column-gap: 12px;
+    align-items: start;
+    padding: 12px 8px;
+  }
+
+  .archive-publication-media {
+    width: 96px;
+  }
+
+  .archive-publication-title {
+    font-size: 14.5px;
+  }
+
+  .archive-publication-authors {
+    font-size: 12px;
+  }
+
+  .archive-publication-venue {
+    font-size: 11.5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .archive-publication-row {
+    grid-template-columns: 80px minmax(0, 1fr) !important;
+    column-gap: 10px;
+    padding: 10px 0;
+  }
+
+  .archive-publication-media {
+    width: 80px;
+  }
+}
