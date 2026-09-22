@@ -1673,7 +1673,12 @@
       right: max(18px, calc((100vw - 1120px) / 2 - 138px));
       transform: translateY(-50%);
       width: 116px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(12px, -50%);
+      transition: opacity .2s ease, transform .2s ease;
     }
+    .page-toc.is-visible { opacity: 1; pointer-events: auto; transform: translate(0, -50%); }
     .page-toc a {
       display: block;
       padding: 8px 0 8px 14px;

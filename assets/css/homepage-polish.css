@@ -1013,6 +1013,72 @@ html[data-theme="dark"] body.page-publications .paper-box-text .btn-accent:focus
   color: #102035 !important;
 }
 
+/* Keep every publication row horizontal on the archive page, including the first and last entries. */
+body.page-publications .paper-box {
+  display: grid !important;
+  grid-template-columns: minmax(150px, 31%) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+}
+
+body.page-publications .paper-box .paper-box-image {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  aspect-ratio: 16 / 9;
+  align-self: center;
+  padding: 0;
+}
+
+body.page-publications .paper-box .paper-box-image img,
+body.page-publications .paper-box .paper-box-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
+
+body.page-publications .paper-box .paper-box-text {
+  min-width: 0;
+  padding: 0.15rem 0.25rem 0.15rem 0;
+}
+
+body.page-publications .paper-box-text h3 {
+  font-size: clamp(1rem, 0.92rem + 0.2vw, 1.2rem);
+}
+
+@media (max-width: 620px) {
+  body.page-publications .paper-box {
+    grid-template-columns: minmax(112px, 31%) minmax(0, 1fr);
+    gap: 0.8rem;
+    padding: 0.72rem !important;
+  }
+  body.page-publications .paper-box .paper-box-image {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  body.page-publications .paper-box .paper-box-text {
+    padding: 0;
+  }
+  body.page-publications .paper-box-text h3 {
+    font-size: 0.98rem;
+    line-height: 1.34;
+  }
+  body.page-publications .paper-box-text .authors,
+  body.page-publications .paper-box-text .venue {
+    font-size: 0.76rem;
+    line-height: 1.42;
+  }
+  body.page-publications .paper-box-text .links {
+    gap: 0.28rem;
+    margin-top: 0.55rem;
+  }
+  body.page-publications .paper-box-text .btn-accent {
+    min-height: 1.7rem;
+    padding: 0.28rem 0.45rem;
+    font-size: 0.68rem;
+  }
+}
+
 @media (min-width: 925px) {
   body.page-home #main > .sidebar,
   body.page-publications #main > .sidebar {
@@ -1409,4 +1475,41 @@ body.page-home .section-toggle-wrap {
 html[data-theme="dark"] body.page-home .profile_box {
   background: var(--hp-surface);
   box-shadow: none !important;
+}
+
+/* Final archive override: keep the reference-style horizontal publication rhythm at every width. */
+body.page-publications .paper-box {
+  display: grid !important;
+  grid-template-columns: minmax(150px, 31%) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+}
+body.page-publications .paper-box .paper-box-image {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+}
+body.page-publications .paper-box .paper-box-image img,
+body.page-publications .paper-box .paper-box-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
+body.page-publications .paper-box .paper-box-text { min-width: 0; padding: 0.15rem 0.25rem 0.15rem 0; }
+body.page-publications .paper-box-text h3 { font-size: clamp(1rem, 0.92rem + 0.2vw, 1.2rem); }
+
+@media (max-width: 620px) {
+  body.page-publications .paper-box {
+    grid-template-columns: minmax(112px, 31%) minmax(0, 1fr);
+    gap: 0.8rem;
+    padding: 0.72rem !important;
+  }
+  body.page-publications .paper-box .paper-box-text { padding: 0; }
+  body.page-publications .paper-box-text h3 { font-size: 0.98rem; line-height: 1.34; }
+  body.page-publications .paper-box-text .authors,
+  body.page-publications .paper-box-text .venue { font-size: 0.76rem; line-height: 1.42; }
+  body.page-publications .paper-box-text .links { gap: 0.28rem; margin-top: 0.55rem; }
+  body.page-publications .paper-box-text .btn-accent { min-height: 1.7rem; padding: 0.28rem 0.45rem; font-size: 0.68rem; }
 }

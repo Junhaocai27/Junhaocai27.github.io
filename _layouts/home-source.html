@@ -74,6 +74,7 @@ layout: compress
           var tocLinks = Array.prototype.slice.call(pageToc.querySelectorAll('a'));
           var tocSections = tocLinks.map(function (link) { return document.querySelector(link.getAttribute('href')); }).filter(Boolean);
           var updatePageToc = function () {
+            pageToc.classList.toggle('is-visible', window.scrollY > 280);
             var marker = window.scrollY + 140;
             var activeIndex = 0;
             tocSections.forEach(function (section, index) {
