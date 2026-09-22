@@ -23,6 +23,25 @@ layout: compress
       FORM: Tianxing Chen source structure reused as the page system; all facts, media, and links belong to Junhao Cai.
       FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
     -->
+    {% if page.lang == 'zh' %}
+    <nav class="page-toc" aria-label="页面导航">
+      <a href="#about" class="is-active">关于我</a>
+      <a href="#news">动态</a>
+      <a href="#education">教育</a>
+      <a href="#publications">论文</a>
+      <a href="#honors">荣誉</a>
+      <a href="#services">服务</a>
+    </nav>
+    {% else %}
+    <nav class="page-toc" aria-label="Page navigation">
+      <a href="#about" class="is-active">About</a>
+      <a href="#news">News</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#honors">Honors</a>
+      <a href="#services">Services</a>
+    </nav>
+    {% endif %}
     {{ content }}
     <script>
       (function () {
@@ -49,6 +68,23 @@ layout: compress
           document.querySelectorAll('.reveal').forEach(function (node) { node.classList.add('visible'); });
         };
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal();
+
+        var pageToc = document.querySelector('.page-toc');
+        if (pageToc) {
+          var tocLinks = Array.prototype.slice.call(pageToc.querySelectorAll('a'));
+          var tocSections = tocLinks.map(function (link) { return document.querySelector(link.getAttribute('href')); }).filter(Boolean);
+          var updatePageToc = function () {
+            var marker = window.scrollY + 140;
+            var activeIndex = 0;
+            tocSections.forEach(function (section, index) {
+              if (section.offsetTop <= marker) activeIndex = index;
+            });
+            tocLinks.forEach(function (link, index) { link.classList.toggle('is-active', index === activeIndex); });
+          };
+          window.addEventListener('scroll', updatePageToc, { passive: true });
+          window.addEventListener('resize', updatePageToc);
+          updatePageToc();
+        }
       })();
 
       function toggleNews() {

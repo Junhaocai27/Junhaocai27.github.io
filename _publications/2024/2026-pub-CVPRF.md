@@ -1,5 +1,6 @@
 ---
 title:          "ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph"
+short_title:    "ForgeDreamer"
 date:           2026-02-21 00:08:00 +0800
 selected:       true  # Set to true to display in Selected Publications
 pub:            "IEEE Conference on Computer Vision and Pattern Recognition (CVPR Findings)"

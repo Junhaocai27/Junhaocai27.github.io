@@ -1,5 +1,6 @@
 ---
 title:          "Cross-Modal Brain Graph Transformer via Function-Structure Connectivity Network for Brain Disease Diagnosis"
+short_title:    "CBGT"
 date:           2025-09-19 00:08:00 +0800
 selected:       true  # Set to true to display in Selected Publications
 pub:            "Medical Image Computing and Computer Assisted Intervention (MICCAI)"

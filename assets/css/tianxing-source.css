@@ -1660,38 +1660,112 @@
     font-size: 12.5px;
   }
 
-  /* Publications: make the newest selected paper carry the visual anchor, then tighten the archive rows. */
-  #publications .pub-item--lead {
-    grid-template-columns: 180px minmax(0, 1fr);
-    gap: 22px;
-    padding: 18px 14px;
-    margin-bottom: 6px;
-    border-radius: 12px;
+  /* Whole-page guide rail, replacing the single-section evaluation rail. */
+  .page-toc { display: none; }
+  @media (min-width: 1280px) {
+    .page-toc {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      position: fixed;
+      z-index: 40;
+      top: 50%;
+      right: max(18px, calc((100vw - 1120px) / 2 - 138px));
+      transform: translateY(-50%);
+      width: 116px;
+    }
+    .page-toc a {
+      display: block;
+      padding: 8px 0 8px 14px;
+      border-left: 2px solid var(--line);
+      color: var(--ink-faint);
+      font-size: 12px;
+      line-height: 1.25;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .page-toc a:hover,
+    .page-toc a.is-active { color: var(--accent); border-left-color: var(--accent); }
   }
-  #publications .pub-item--lead .pub-thumb,
-  #publications .pub-item--lead .pub-thumb img { width: 180px; }
+
+  /* Publication rows follow the reference archive: consistent media, generous copy, and a shared guide surface. */
+  #publications .pub-list {
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line));
+    border-radius: 0;
+  }
+  #publications .pub-item,
+  #publications .pub-item--lead,
   #publications .pub-item:not(.pub-item--lead) {
-    grid-template-columns: 120px minmax(0, 1fr);
-    gap: 14px;
-    padding: 10px 8px;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 24px;
+    min-height: 188px;
+    padding: 22px 18px;
+    align-items: center;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
   }
-  #publications .pub-item:not(.pub-item--lead) .pub-thumb,
-  #publications .pub-item:not(.pub-item--lead) .pub-thumb img { width: 120px; }
-  #publications .pub-item--lead .pub-title { font-size: 18px; }
-  #publications .pub-item--lead .pub-authors { font-size: 13px; }
-  #publications .pub-item--lead .pub-venue { font-size: 12px; }
+  #publications .pub-item:last-child { border-bottom: none; }
+  #publications .pub-item:hover,
+  #publications .pub-item--lead:hover { background: color-mix(in srgb, var(--accent) 4%, transparent); }
+  #publications .pub-thumb,
+  #publications .pub-thumb img,
+  #publications .pub-thumb-placeholder {
+    width: 220px;
+  }
+  #publications .pub-thumb {
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 14%, var(--line));
+  }
+  #publications .pub-thumb img { aspect-ratio: 16 / 9; object-fit: cover; }
+  #publications .pub-title,
+  #publications .pub-item--lead .pub-title { font-size: clamp(18px, 1.8vw, 25px); line-height: 1.22; }
+  #publications .pub-authors,
+  #publications .pub-item--lead .pub-authors { font-size: 13.5px; margin-top: 7px; }
+  #publications .pub-venue,
+  #publications .pub-item--lead .pub-venue { font-size: 12.5px; margin-top: 8px; }
+  #publications .pub-links { margin-top: 10px; }
 
   @media (max-width: 960px) {
-    #publications .pub-item--lead { grid-template-columns: 140px minmax(0, 1fr); }
-    #publications .pub-item--lead .pub-thumb,
-    #publications .pub-item--lead .pub-thumb img { width: 140px; }
+    #publications .pub-item,
+    #publications .pub-item--lead,
+    #publications .pub-item:not(.pub-item--lead) {
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 18px;
+      min-height: 160px;
+      padding: 18px 14px;
+    }
+    #publications .pub-thumb,
+    #publications .pub-thumb img,
+    #publications .pub-thumb-placeholder { width: 180px; }
+    #publications .pub-title,
+    #publications .pub-item--lead .pub-title { font-size: 20px; }
   }
   @media (max-width: 680px) {
-    #publications .pub-item--lead { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 12px 8px; }
-    #publications .pub-item--lead .pub-thumb,
-    #publications .pub-item--lead .pub-thumb img { width: 96px; }
-    #publications .pub-item--lead .pub-title { font-size: 14.5px; }
-    #publications .pub-item:not(.pub-item--lead) { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; }
-    #publications .pub-item:not(.pub-item--lead) .pub-thumb,
-    #publications .pub-item:not(.pub-item--lead) .pub-thumb img { width: 96px; }
+    #publications .pub-item,
+    #publications .pub-item--lead,
+    #publications .pub-item:not(.pub-item--lead) {
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 14px;
+      min-height: 0;
+      padding: 14px 10px;
+      align-items: start;
+    }
+    #publications .pub-thumb,
+    #publications .pub-thumb img,
+    #publications .pub-thumb-placeholder { width: 112px; }
+    #publications .pub-title,
+    #publications .pub-item--lead .pub-title { font-size: 16px; }
+    #publications .pub-authors { font-size: 12px; }
+    #publications .pub-venue { font-size: 11.5px; }
+  }
+  @media (max-width: 420px) {
+    #publications .pub-item,
+    #publications .pub-item--lead,
+    #publications .pub-item:not(.pub-item--lead) { grid-template-columns: 88px minmax(0, 1fr); gap: 10px; padding: 12px 8px; }
+    #publications .pub-thumb,
+    #publications .pub-thumb img,
+    #publications .pub-thumb-placeholder { width: 88px; }
   }

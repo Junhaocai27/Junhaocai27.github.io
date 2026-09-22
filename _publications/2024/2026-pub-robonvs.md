@@ -1,5 +1,6 @@
 ---
 title:          "Beyond Viewpoint Generalization: What Multi-View Demonstrations Offer and How to Synthesize Them for Robot Manipulation?"
+short_title:    "RoboNVS"
 date:           2026-03-23 23:01:15 +0800
 selected:       true  # Set to true to display in Selected Publications
 pub:            "arXiv preprint"
