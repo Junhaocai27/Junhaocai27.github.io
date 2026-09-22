@@ -11,9 +11,9 @@
   {%- endif -%}
 {%- endfor -%}
 <li class="home-publication-row{% if is_lead_author %} home-publication-row--lead{% endif %}" id="pub-{{ paper.title | slugify }}">
-  <a class="home-publication-media" href="{% if paper.links %}{{ paper.links.first[1] }}{% else %}#{% endif %}" target="_blank" rel="noreferrer">
+  <div class="home-publication-media">
     <img src="{{ cover_path | relative_url }}" alt="{{ paper.title }} {% if page.lang == 'zh' %}封面{% else %}cover{% endif %}">
-  </a>
+  </div>
   <div class="home-publication-content">
     <h3 class="home-publication-title">{{ paper.title }}</h3>
     <div class="home-publication-authors">{% include widgets/author_list.html authors=paper.authors %}</div>
