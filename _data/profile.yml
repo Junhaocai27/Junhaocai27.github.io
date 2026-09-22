@@ -21,19 +21,19 @@ wechat_prompt: >-
 
 short_bio_text_justify: true
 research_interests:
-- Text-to-3D Generation
-- Diffusion Models
 - Multimodal Learning
-- Embodied Intelligence
+- Diffusion Models
+- Industrial Anomaly Detection
 - LoRA Fine-tuning
+- Text-to-3D Generation
 short_bio: >-
   <p>
     I am a Master's student in the College of Mechatronics and Control Engineering at 
     <a href="https://www.szu.edu.cn/" target="_blank">Shenzhen University</a>. 
-    My research areas include <strong>Text-to-3D generation</strong>, <strong>diffusion models</strong>, 
-    <strong>hypergraph neural networks (HGNN)</strong>, and <strong>LoRA fine-tuning</strong>. 
-    I focus on developing parameter-efficient fine-tuning strategies and hypergraph-based architectures 
-    to advance multimodal learning and high-fidelity 3D content generation.
+    My research focuses on <strong>multimodal learning</strong>, <strong>diffusion models</strong>,
+    <strong>industrial anomaly detection</strong>, hypergraph neural networks (HGNN), and <strong>LoRA fine-tuning</strong>.
+    I develop parameter-efficient adaptation strategies and cross-modal architectures for robust visual understanding,
+    with text-to-3D generation as a complementary direction.
   </p>
   <p>
     My academic excellence has been recognized with several distinctions, including being named 

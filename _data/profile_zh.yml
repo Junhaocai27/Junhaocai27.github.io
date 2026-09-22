@@ -15,17 +15,17 @@ wechat_prompt: >-
 
 short_bio_text_justify: true
 research_interests:
-- 文生 3D 生成
-- 扩散模型
 - 多模态学习
-- 具身智能
+- 扩散模型
+- 工业异常检测
 - LoRA 微调
+- 文生 3D 生成
 short_bio: >-
   <p>
     我目前是<a href="https://www.szu.edu.cn/" target="_blank">深圳大学</a>机电与控制工程学院硕士研究生。
-    我的研究方向包括 <strong>文生 3D 生成</strong>、<strong>扩散模型</strong>、
-    <strong>超图神经网络（HGNN）</strong> 和 <strong>LoRA 微调</strong>。
-    我主要关注参数高效微调策略与基于超图的网络架构，以推进多模态学习与高保真 3D 内容生成。
+    我的研究方向主要包括 <strong>多模态学习</strong>、<strong>扩散模型</strong>、
+    <strong>工业异常检测</strong>、超图神经网络（HGNN）和 <strong>LoRA 微调</strong>。
+    我主要关注参数高效适配策略与跨模态网络架构，文生 3D 生成作为补充方向。
   </p>
   <p>
     在学业方面，我曾获得多项荣誉，包括 🏆 <strong>深圳大学优秀毕业生</strong>

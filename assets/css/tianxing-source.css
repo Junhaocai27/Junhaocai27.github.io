@@ -1654,3 +1654,39 @@
     color: var(--ink-soft);
     font-size: 12.5px;
   }
+
+  /* Publications: make the newest selected paper carry the visual anchor, then tighten the archive rows. */
+  #publications .pub-item--lead {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 22px;
+    padding: 18px 14px;
+    margin-bottom: 6px;
+    border-radius: 12px;
+  }
+  #publications .pub-item--lead .pub-thumb,
+  #publications .pub-item--lead .pub-thumb img { width: 180px; }
+  #publications .pub-item:not(.pub-item--lead) {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 14px;
+    padding: 10px 8px;
+  }
+  #publications .pub-item:not(.pub-item--lead) .pub-thumb,
+  #publications .pub-item:not(.pub-item--lead) .pub-thumb img { width: 120px; }
+  #publications .pub-item--lead .pub-title { font-size: 18px; }
+  #publications .pub-item--lead .pub-authors { font-size: 13px; }
+  #publications .pub-item--lead .pub-venue { font-size: 12px; }
+
+  @media (max-width: 960px) {
+    #publications .pub-item--lead { grid-template-columns: 140px minmax(0, 1fr); }
+    #publications .pub-item--lead .pub-thumb,
+    #publications .pub-item--lead .pub-thumb img { width: 140px; }
+  }
+  @media (max-width: 680px) {
+    #publications .pub-item--lead { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 12px 8px; }
+    #publications .pub-item--lead .pub-thumb,
+    #publications .pub-item--lead .pub-thumb img { width: 96px; }
+    #publications .pub-item--lead .pub-title { font-size: 14.5px; }
+    #publications .pub-item:not(.pub-item--lead) { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; }
+    #publications .pub-item:not(.pub-item--lead) .pub-thumb,
+    #publications .pub-item:not(.pub-item--lead) .pub-thumb img { width: 96px; }
+  }
