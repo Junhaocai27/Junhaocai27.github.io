@@ -1,7 +1,6 @@
 ---
 title: ""
-layout: default
-author_profile: false
+layout: home-source
 lang: en
 lang_switch_url: /zh/
 body_class: page-home
@@ -11,109 +10,64 @@ body_class: page-home
 {% assign sorted_awards = profile.awards | sort: "date" | reverse %}
 {% assign selected_pubs = site.publications | where_exp: "item", "item.published != false" | sort: "date" | reverse | where: "selected", true %}
 
-<div class="home-page">
-  <span class="anchor" id="about-me"></span>
-
-  <section class="home-hero" aria-labelledby="home-title">
-    <div class="home-hero-copy">
-      <h1 id="home-title">Junhao Cai <span>(蔡俊豪)</span></h1>
-      <p class="home-role">M.S. student at Shenzhen University · Generative AI &amp; Multimodal Learning</p>
-      <div class="home-bio">{{ profile.short_bio }}</div>
-      <div class="home-actions" aria-label="Contact and profile links">
-        <a href="mailto:{{ profile.email }}" class="home-action"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
-        <a href="{{ profile.gscholar }}" class="home-action"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
-        <a href="https://github.com/{{ profile.github }}" class="home-action"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
-        <a href="{{ page.lang_switch_url | relative_url }}" class="home-action"><i class="fas fa-language" aria-hidden="true"></i> 中文</a>
-      </div>
-      <div class="home-focus">
-        <h2>Current focus</h2>
-        <ul>{% for interest in profile.research_interests %}<li>{{ interest }}</li>{% endfor %}</ul>
-      </div>
+<nav class="nav" id="nav">
+  <div class="nav-blur" aria-hidden="true"><div class="nav-blur-layer nav-blur-layer--1"></div><div class="nav-blur-layer nav-blur-layer--2"></div><div class="nav-blur-layer nav-blur-layer--3"></div><div class="nav-blur-layer nav-blur-layer--4"></div><div class="nav-blur-layer nav-blur-layer--5"></div><div class="nav-blur-fade"></div></div>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#about">Junhao Cai (蔡俊豪)</a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a><a href="#news">News</a><a href="#education">Education</a><a href="#publications">Publications</a><a href="#honors">Honors</a><a href="#services">Services</a><a href="{{ page.lang_switch_url | relative_url }}">中文</a>
     </div>
-    <figure class="home-portrait">
-      <img src="{{ profile.portrait_url | relative_url }}" alt="Portrait of Junhao Cai">
-      <figcaption>Shenzhen, China · 2025</figcaption>
-    </figure>
-  </section>
-
-  <section class="home-section home-note" aria-label="Ph.D. opportunities">
-    <div class="home-section-heading"><span>Open to collaboration</span></div>
-    <p>I am actively seeking Ph.D. opportunities in computer vision, multimodal learning, generative AI, and embodied intelligence.</p>
-  </section>
-
-  <span class="anchor" id="news"></span>
-  <section class="home-section" aria-labelledby="news-title">
-    <div class="home-section-heading"><h2 id="news-title">News</h2><span>Selected updates</span></div>
-    <div class="home-rows news-rows collapsible-section-list" id="news-list">
-      {% for item in all_news %}
-        <div class="home-row{% if forloop.index > 4 %} collapsible-item{% endif %}"{% if forloop.index > 4 %} hidden{% endif %}>
-          <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%Y.%m" }}</time>
-          <p>{{ item.title }}</p>
-        </div>
-      {% endfor %}
-    </div>
-    {% assign hidden_news_count = all_news.size | minus: 4 %}
-    {% if hidden_news_count > 0 %}
-      <button type="button" class="section-toggle" data-collapsible-toggle aria-controls="news-list" aria-expanded="false" data-expand-label="Show {{ hidden_news_count }} more" data-collapse-label="Show less"><span class="section-toggle-label">Show {{ hidden_news_count }} more</span><i class="fas fa-arrow-down" aria-hidden="true"></i></button>
-    {% endif %}
-  </section>
-
-  <span class="anchor" id="education"></span>
-  <section class="home-section" aria-labelledby="education-title">
-    <div class="home-section-heading"><h2 id="education-title">Education</h2><span>Academic background</span></div>
-    <div class="home-rows education-rows">
-      {% for school in profile.education %}
-        <div class="home-row education-row">
-          <div class="education-mark"><img src="{{ school.logo | relative_url }}" alt="{{ school.name }} logo"></div>
-          <div><h3>{{ school.name }}</h3><p>{{ school.position }}</p></div>
-          <time>{{ school.date }}</time>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <div class="home-split">
-    <span class="anchor" id="service"></span>
-    <section class="home-section" aria-labelledby="service-title">
-      <div class="home-section-heading"><h2 id="service-title">Academic service</h2></div>
-      <div class="home-rows compact-rows collapsible-section-list" id="service-list">
-        {% for item in profile.service %}
-          <div class="home-row{% if forloop.index > 3 %} collapsible-item{% endif %}"{% if forloop.index > 3 %} hidden{% endif %}><p>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' }}</p></div>
-        {% endfor %}
-      </div>
-      {% assign hidden_service_count = profile.service.size | minus: 3 %}
-      {% if hidden_service_count > 0 %}<button type="button" class="section-toggle" data-collapsible-toggle aria-controls="service-list" aria-expanded="false" data-expand-label="Show {{ hidden_service_count }} more" data-collapse-label="Show less"><span class="section-toggle-label">Show {{ hidden_service_count }} more</span><i class="fas fa-arrow-down" aria-hidden="true"></i></button>{% endif %}
-    </section>
-
-    <span class="anchor" id="awards"></span>
-    <section class="home-section" aria-labelledby="awards-title">
-      <div class="home-section-heading"><h2 id="awards-title">Honors &amp; awards</h2></div>
-      <div class="home-rows compact-rows collapsible-section-list" id="awards-list">
-        {% for item in sorted_awards %}
-          <div class="home-row award-row{% if forloop.index > 4 %} collapsible-item{% endif %}"{% if forloop.index > 4 %} hidden{% endif %}><time>{{ item.date }}</time><p>{{ item.name }}</p></div>
-        {% endfor %}
-      </div>
-      {% assign hidden_awards_count = sorted_awards.size | minus: 4 %}
-      {% if hidden_awards_count > 0 %}<button type="button" class="section-toggle" data-collapsible-toggle aria-controls="awards-list" aria-expanded="false" data-expand-label="Show {{ hidden_awards_count }} more" data-collapse-label="Show less"><span class="section-toggle-label">Show {{ hidden_awards_count }} more</span><i class="fas fa-arrow-down" aria-hidden="true"></i></button>{% endif %}
-    </section>
   </div>
+</nav>
 
-  <span class="anchor" id="publications"></span>
-  <section class="home-section publications-section" aria-labelledby="publications-title">
-    <div class="home-section-heading"><h2 id="publications-title">Selected publications</h2><span>Research in progress</span></div>
-    <div class="publication-list">
-      {% for paper in selected_pubs %}
-        {% assign cover_path = paper.cover | default: "/assets/images/empty_300x200.svg" %}
-        <article class="publication-row">
-          <a class="publication-cover" href="{% if paper.links %}{{ paper.links.first[1] }}{% else %}#{% endif %}" aria-label="Read {{ paper.title }}"><img src="{{ cover_path | relative_url }}" alt="{{ paper.title }} cover"></a>
-          <div class="publication-copy">
-            <div class="publication-topline"><span>{{ paper.pub_date }}</span><span>{{ paper.pub }}</span></div>
-            <h3>{{ paper.title }}</h3>
-            <p class="publication-authors">{% include widgets/author_list.html authors=paper.authors %}</p>
-            {% if paper.links %}<div class="publication-links">{% for link in paper.links %}{% assign link_label = link[0] %}{% assign link_url = link[1] %}{% assign link_url_lower = link_url | downcase %}<a href="{{ link_url }}" class="text-link">{% if link_label == "Springer" or link_url_lower contains "link.springer.com" %}<i class="ai ai-springer" aria-hidden="true"></i>{% elsif link_label == "Code" %}<i class="fab fa-github" aria-hidden="true"></i>{% elsif link_label == "Project" %}<i class="fas fa-external-link-alt" aria-hidden="true"></i>{% else %}<i class="fas fa-file-alt" aria-hidden="true"></i>{% endif %} {{ link_label }}</a>{% endfor %}</div>{% endif %}
-          </div>
-        </article>
-      {% endfor %}
+<header class="intro" id="about">
+  <div class="intro-bg" aria-hidden="true"><img src="{{ profile.portrait_url | relative_url }}" alt=""></div>
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="intro-copy">
+        <h1 class="reveal reveal-d1">Junhao Cai <span class="cn">(蔡俊豪)</span></h1>
+        <p class="intro-roles reveal reveal-d2">
+          <span class="role"><span class="role-title">M.S. Student</span><a href="https://www.szu.edu.cn/" target="_blank" rel="noreferrer">Shenzhen University</a></span>
+          <span class="role"><span class="role-title">Research</span><a href="#publications">Text-to-3D &amp; Multimodal Learning</a></span>
+          <span class="role"><span class="role-title">Open to</span><a href="mailto:{{ profile.email }}">Ph.D. Opportunities</a></span>
+        </p>
+        <p class="intro-lead reveal reveal-d2">Building <em>efficient</em> models for high-fidelity 3D and multimodal intelligence.</p>
+        <div class="intro-bio reveal reveal-d3">{{ profile.short_bio }}</div>
+        <div class="intro-actions reveal reveal-d3">
+          <a href="mailto:{{ profile.email }}">Email</a>
+          <a href="{{ profile.gscholar }}" target="_blank" rel="noreferrer">Scholar</a>
+          <a href="https://github.com/{{ profile.github }}" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="{{ site.author.wechat_qr | relative_url }}" target="_blank" rel="noreferrer">WeChat</a>
+          <a href="{{ page.lang_switch_url | relative_url }}">中文</a>
+        </div>
+        <details class="reveal reveal-d3"><summary>Detailed Profile (详细个人介绍)</summary><div class="bio-detail"><p>I am a Master's student in the College of Mechatronics and Control Engineering at <a href="https://www.szu.edu.cn/" target="_blank" rel="noreferrer">Shenzhen University</a>. My work explores text-to-3D generation, diffusion models, hypergraph neural networks, and parameter-efficient LoRA fine-tuning for multimodal learning.</p><p>My academic distinctions include Outstanding Graduate of Shenzhen University (2025, awarded to 333 of 5,208 graduates) and Bachelor of Honor from the School of Mechatronics and Control Engineering. I am currently open to Ph.D. opportunities in computer vision, multimodal learning, generative AI, and embodied intelligence.</p><p>研究方向包括文生 3D 生成、扩散模型、超图神经网络（HGNN）与 LoRA 微调，重点关注参数高效微调策略和高保真 3D 内容生成。</p></div></details>
+      </div>
+      <aside class="intro-side reveal reveal-d2"><div class="intro-portrait"><img src="{{ profile.portrait_url | relative_url }}" alt="Portrait of Junhao Cai"><div class="avatar-placeholder" style="display:none">JC</div></div></aside>
     </div>
-  </section>
-</div>
+  </div>
+</header>
+
+<section class="block soft" id="news"><div class="wrap"><div class="sec-head reveal"><h2 class="sec-title">News</h2></div><ul class="news-list reveal" id="news-list">{% for item in all_news %}<li class="news-item{% if forloop.index > 6 %} news-hidden{% endif %}"><span class="news-date">{{ item.date | date: "%m/%Y" }}</span><span class="news-content">{{ item.title }}</span></li>{% endfor %}</ul>{% if all_news.size > 6 %}<button class="toggle-btn reveal" id="news-toggle-btn" onclick="toggleNews()">Show more ↓</button>{% endif %}</div></section>
+
+<section class="block" id="education"><div class="wrap"><div class="sec-head reveal"><h2 class="sec-title">Education</h2></div><ul class="edu-list edu-list--rows reveal">{% for school in profile.education %}<li class="edu-item"><div class="edu-logo-box"><img src="{{ school.logo | relative_url }}" alt="{{ school.name }} logo"></div><div class="edu-content"><div class="school"><a href="https://www.szu.edu.cn/" target="_blank" rel="noreferrer">{{ school.name }}</a></div><div class="dept">{{ school.position }}</div></div><div class="edu-side"><div class="edu-years">{{ school.date }}</div><p class="edu-place">{{ school.name }}</p></div></li>{% endfor %}</ul></div></section>
+
+<section class="block soft" id="focus"><div class="wrap"><div class="sec-head reveal"><h2 class="sec-title">Research Interests</h2></div><ul class="tag-list reveal">{% for interest in profile.research_interests %}<li>{{ interest }}</li>{% endfor %}</ul></div></section>
+
+<section class="block" id="publications"><div class="wrap"><div class="sec-head reveal"><h2 class="sec-title">Selected Publications</h2><a class="section-head-link" href="{{ '/publications/' | relative_url }}">View all →</a></div><ul class="pub-list reveal">{% for paper in selected_pubs %}{% assign cover_path = paper.cover | default: '/assets/images/empty_300x200.svg' %}<li class="pub-item"><a class="pub-thumb" href="{% if paper.links %}{{ paper.links.first[1] }}{% else %}#{% endif %}" target="_blank" rel="noreferrer"><img src="{{ cover_path | relative_url }}" alt="{{ paper.title }} cover"></a><div class="pub-main"><h3 class="pub-title">{{ paper.title }}</h3><div class="pub-authors">{% include widgets/author_list.html authors=paper.authors %}</div><div class="pub-venue"><span class="venue-name">{{ paper.pub }}</span> · {{ paper.pub_date }}</div>{% if paper.links %}<div class="pub-links">{% for link in paper.links %}<a class="pub-link" href="{{ link[1] }}" target="_blank" rel="noreferrer">{{ link[0] }}</a>{% endfor %}</div>{% endif %}</div></li>{% endfor %}</ul></div></section>
+
+<section class="block soft" id="honors"><div class="wrap"><div class="sec-head reveal"><h2 class="sec-title">Honors &amp; Awards</h2></div><ul class="honors-other reveal" id="honors-other-list">{% for item in sorted_awards %}<li{% if forloop.index > 5 %} class="honors-hidden"{% endif %}><span class="h-year">{{ item.date }}</span><span>{{ item.name }}</span></li>{% endfor %}</ul>{% if sorted_awards.size > 5 %}<button class="toggle-btn reveal" type="button" onclick="toggleHonors()">Show more ↓</button>{% endif %}</div></section>
+
+<section class="block" id="services"><div class="wrap"><div class="sec-head reveal"><h2 class="sec-title">Academic Services</h2></div><ul class="svc-misc reveal">{% for item in profile.service %}<li><span class="sm-label">Reviewer</span><span>{{ item.name | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>{% endfor %}</ul></div></section>
+
+<footer class="wrap" style="padding-top: 22px; padding-bottom: 40px; color: var(--ink-faint); font-size: 12px;">Junhao Cai · {{ site.time | date: '%Y' }} · <a href="{{ page.lang_switch_url | relative_url }}">中文主页</a></footer>
+
+<script>
+  function toggleHonors() {
+    var list = document.getElementById('honors-other-list');
+    var button = list && list.nextElementSibling;
+    if (!list) return;
+    var expanded = list.classList.toggle('is-expanded');
+    if (button) button.textContent = expanded ? 'Show less ↑' : 'Show more ↓';
+  }
+</script>
