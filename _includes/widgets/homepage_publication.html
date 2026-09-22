@@ -1,0 +1,27 @@
+{%- assign paper = include.paper -%}
+{%- assign cover_path = paper.cover | default: '/assets/images/empty_300x200.svg' -%}
+{%- assign is_lead_author = false -%}
+{%- assign owner_name = site.data.profile.primary_name | default: 'Junhao Cai' -%}
+{%- for author in paper.authors -%}
+  {%- assign author_name = author | remove: '*' | remove: '#' | strip -%}
+  {%- if author_name == owner_name -%}
+    {%- if forloop.first or author contains '*' -%}
+      {%- assign is_lead_author = true -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+<li class="home-publication-row{% if is_lead_author %} home-publication-row--lead{% endif %}" id="pub-{{ paper.title | slugify }}">
+  <a class="home-publication-media" href="{% if paper.links %}{{ paper.links.first[1] }}{% else %}#{% endif %}" target="_blank" rel="noreferrer">
+    <img src="{{ cover_path | relative_url }}" alt="{{ paper.title }} {% if page.lang == 'zh' %}封面{% else %}cover{% endif %}">
+  </a>
+  <div class="home-publication-content">
+    <h3 class="home-publication-title">{{ paper.title }}</h3>
+    <div class="home-publication-authors">{% include widgets/author_list.html authors=paper.authors %}</div>
+    <div class="home-publication-venue"><span>{{ paper.pub }}</span> · {{ paper.pub_date }}</div>
+    {% if paper.links %}
+      <div class="home-publication-links">
+        {% for link in paper.links %}<a href="{{ link[1] }}" target="_blank" rel="noreferrer">{{ link[0] }}</a>{% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</li>
