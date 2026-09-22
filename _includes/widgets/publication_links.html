@@ -6,7 +6,6 @@
         {% assign link_label_lower = link_label | downcase %}
         {% assign link_url = link[1] %}
         {% assign link_target = "_blank" %}
-        {% assign icon_class = "fa-solid fa-arrow-up-right-from-square" %}
         {% assign link_kind = "external" %}
 
         {% if link[1].url %}
@@ -19,21 +18,16 @@
         {% assign link_url_lower = link_url | downcase %}
 
         {% if link_label_lower contains "springer" or link_url_lower contains "link.springer.com" %}
-            {% assign icon_class = "ai ai-springer" %}
             {% assign link_kind = "paper" %}
         {% elsif link_label_lower contains "paper" or link_label_lower contains "pdf" or link_label_lower contains "arxiv" %}
-            {% assign icon_class = "fa-solid fa-file-lines" %}
             {% assign link_kind = "paper" %}
         {% elsif link_label_lower contains "code" or link_label_lower contains "github" or link_label_lower contains "repo" %}
-            {% assign icon_class = "fa-solid fa-code" %}
             {% assign link_kind = "code" %}
         {% elsif link_label_lower contains "project" or link_label_lower contains "demo" or link_label_lower contains "website" or link_label_lower contains "page" %}
-            {% assign icon_class = "fa-solid fa-globe" %}
             {% assign link_kind = "project" %}
         {% endif %}
 
         <a class="publication-link publication-link--{{ link_kind }}" target="{{ link_target }}" href="{{ link_url }}" aria-label="{{ link_label }}" {% if link_target == "_blank" %}rel="noopener noreferrer"{% endif %}>
-            <i class="{{ icon_class }} publication-link-icon" aria-hidden="true"></i>
             <span>{{ link_label }}</span>
         </a>
     {% endfor %}
