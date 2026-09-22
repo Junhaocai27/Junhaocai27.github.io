@@ -1,0 +1,42 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="{{ site.description | escape }}">
+    <title>{{ page.title }} · {{ site.title }}</title>
+    <link rel="icon" type="image/png" href="{{ site.author.favicon | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/tianxing-source.css?v=20260922-3' | relative_url }}">
+  </head>
+  <body class="archive-source">
+    {{ content }}
+    <script>
+      (function () {
+        var nav = document.getElementById('nav');
+        var toggle = document.getElementById('nav-toggle');
+        var links = document.getElementById('nav-links');
+        if (toggle && nav && links) {
+          toggle.addEventListener('click', function () {
+            var open = nav.classList.toggle('is-open');
+            document.body.classList.toggle('nav-open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+          links.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+              nav.classList.remove('is-open');
+              document.body.classList.remove('nav-open');
+              toggle.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+        document.querySelectorAll('.reveal').forEach(function (node) { node.classList.add('visible'); });
+      })();
+    </script>
+  </body>
+</html>
